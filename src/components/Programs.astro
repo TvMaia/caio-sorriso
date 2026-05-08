@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/assets';
 const programs = [
   {
     id: 'american-zone',
@@ -9,7 +10,7 @@ const programs = [
     description: 'O maior programa de esportes americanos da TV aberta brasileira. NFL, NBA, Baseball, NHL e MLS com análise, emoção e interatividade.',
     sports: ['NFL', 'NBA', 'Baseball', 'NHL', 'MLS'],
     highlight: 'São Paulo Game — NFL Brasil',
-    image: `${import.meta.env.BASE_URL}images/program-american-zone.jpg`,
+    image: asset('images/program-american-zone.jpg'),
     accentColor: '#0099FF',
     badge: 'Em exibição',
   },
@@ -22,7 +23,7 @@ const programs = [
     description: 'O programa mais debatido do futebol brasileiro. Análises quentes, opiniões fortes e os maiores especialistas esportivos do país.',
     sports: ['Futebol', 'Brasileirão', 'Copa do Brasil', 'Champions'],
     highlight: 'Programa campeão de audiência na Band',
-    image: `${import.meta.env.BASE_URL}images/program-donos-da-bola.jpg`,
+    image: asset('images/program-donos-da-bola.jpg'),
     accentColor: '#FFB400',
     badge: 'Em exibição',
   },
@@ -35,7 +36,7 @@ const programs = [
     description: 'Caio Sorriso estará nos três países-sede da Copa do Mundo de 2026, cobrindo os maiores momentos do maior evento esportivo do planeta.',
     sports: ['Seleção Brasileira', 'Copa do Mundo', 'Análise Tática', 'Bastidores'],
     highlight: 'Cobertura confirmada — EUA, México e Canadá',
-    image: `${import.meta.env.BASE_URL}images/program-copa.jpg`,
+    image: asset('images/program-copa.jpg'),
     accentColor: '#00C896',
     badge: '2026',
   },

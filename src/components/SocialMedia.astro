@@ -1,4 +1,5 @@
 ---
+import { asset } from '../utils/assets';
 const socials = [
   {
     name: 'Instagram',
@@ -83,7 +84,7 @@ const socials = [
         {[1,2,3,4,5,6].map((n) => (
           <a href="https://www.instagram.com/caiosorrisooficial/" target="_blank" rel="noopener" class="ig-post">
             <img
-              src={`${import.meta.env.BASE_URL}images/instagram-${n}.jpg`}
+              src={asset(`images/instagram-${n}.jpg`)}
               alt={`Post Instagram ${n}`}
               class="ig-post-img"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"

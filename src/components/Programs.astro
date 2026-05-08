@@ -1,0 +1,281 @@
+---
+const programs = [
+  {
+    id: 'american-zone',
+    name: 'American Zone',
+    network: 'RedeTV!',
+    networkColor: '#0099FF',
+    schedule: 'Domingos • 18h00 às 19h00',
+    description: 'O maior programa de esportes americanos da TV aberta brasileira. NFL, NBA, Baseball, NHL e MLS com análise, emoção e interatividade.',
+    sports: ['NFL', 'NBA', 'Baseball', 'NHL', 'MLS'],
+    highlight: 'São Paulo Game — NFL Brasil',
+    image: `${import.meta.env.BASE_URL}images/program-american-zone.jpg`,
+    accentColor: '#0099FF',
+    badge: 'Em exibição',
+  },
+  {
+    id: 'donos-da-bola',
+    name: 'Os Donos da Bola',
+    network: 'Band',
+    networkColor: '#FFB400',
+    schedule: 'De segunda a sexta • Tarde',
+    description: 'O programa mais debatido do futebol brasileiro. Análises quentes, opiniões fortes e os maiores especialistas esportivos do país.',
+    sports: ['Futebol', 'Brasileirão', 'Copa do Brasil', 'Champions'],
+    highlight: 'Programa campeão de audiência na Band',
+    image: `${import.meta.env.BASE_URL}images/program-donos-da-bola.jpg`,
+    accentColor: '#FFB400',
+    badge: 'Em exibição',
+  },
+  {
+    id: 'copa-do-mundo',
+    name: 'Copa do Mundo 2026',
+    network: 'Cobertura Especial',
+    networkColor: '#00C896',
+    schedule: 'Junho–Julho 2026 • EUA, México e Canadá',
+    description: 'Caio Sorriso estará nos três países-sede da Copa do Mundo de 2026, cobrindo os maiores momentos do maior evento esportivo do planeta.',
+    sports: ['Seleção Brasileira', 'Copa do Mundo', 'Análise Tática', 'Bastidores'],
+    highlight: 'Cobertura confirmada — EUA, México e Canadá',
+    image: `${import.meta.env.BASE_URL}images/program-copa.jpg`,
+    accentColor: '#00C896',
+    badge: '2026',
+  },
+];
+---
+
+<section id="programas" class="py-24 relative" style="background: #060D1E;">
+  <!-- Subtle top gradient -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-blue/30 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="section-label justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+        Programas
+      </div>
+      <h2 class="section-title text-center">
+        Presente nas maiores<br/>
+        <span class="gradient-text">telas do Brasil</span>
+      </h2>
+      <p class="section-subtitle mx-auto text-center">
+        De domingo a domingo, Caio Sorriso está em 3 programas simultâneos nas principais emissoras nacionais.
+      </p>
+    </div>
+
+    <!-- Programs grid -->
+    <div class="programs-grid">
+      {programs.map((prog, i) => (
+        <div class={`program-card animate-on-scroll animate-delay-${i + 1}`} style={`--accent: ${prog.accentColor}`}>
+
+          <!-- Network header -->
+          <div class="program-network-bar" style={`background: ${prog.networkColor}18; border-bottom: 1px solid ${prog.networkColor}25`}>
+            <span class="program-network-name" style={`color: ${prog.networkColor}`}>{prog.network}</span>
+            <span class="program-badge">{prog.badge}</span>
+          </div>
+
+          <!-- Thumbnail -->
+          <div class="program-thumbnail">
+            <img
+              src={prog.image}
+              alt={prog.name}
+              class="program-thumb-img"
+              onerror="this.style.display='none'"
+            />
+            <div class="program-thumb-overlay">
+              <span class="program-play-icon">▶</span>
+            </div>
+            <div class="program-thumb-placeholder" style={`background: linear-gradient(135deg, ${prog.accentColor}15 0%, #050C18 100%)`}>
+              <span style={`font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 900; color: ${prog.accentColor}30`}>{prog.name.toUpperCase()}</span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="program-content">
+            <h3 class="program-name">{prog.name}</h3>
+            <div class="program-schedule">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {prog.schedule}
+            </div>
+            <p class="program-desc">{prog.description}</p>
+
+            <!-- Sports pills -->
+            <div class="program-sports">
+              {prog.sports.map((sport) => (
+                <span class="sport-pill" style={`border-color: ${prog.accentColor}30; color: ${prog.accentColor}`}>{sport}</span>
+              ))}
+            </div>
+
+            <!-- Highlight -->
+            <div class="program-highlight" style={`background: ${prog.accentColor}10; border-left: 3px solid ${prog.accentColor}`}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill={prog.accentColor} stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>{prog.highlight}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .program-card {
+    background: #0F1E35;
+    border: 1px solid rgba(0,153,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+  }
+
+  .program-card:hover {
+    border-color: var(--accent, #0099FF);
+    border-opacity: 0.4;
+    border-color: color-mix(in srgb, var(--accent, #0099FF) 40%, transparent);
+    box-shadow: 0 12px 50px color-mix(in srgb, var(--accent, #0099FF) 20%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .program-network-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .program-network-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .program-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.07);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .program-thumbnail {
+    position: relative;
+    aspect-ratio: 16/7;
+    overflow: hidden;
+  }
+
+  .program-thumb-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .program-thumb-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+  }
+
+  .program-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+
+  .program-card:hover .program-thumb-overlay { opacity: 1; }
+
+  .program-play-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(0,153,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    padding-left: 3px;
+  }
+
+  .program-content {
+    padding: 20px;
+  }
+
+  .program-name {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 6px 0;
+    line-height: 1.1;
+  }
+
+  .program-schedule {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .program-desc {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 14px 0;
+  }
+
+  .program-sports {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .sport-pill {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid;
+    background: transparent;
+  }
+
+  .program-highlight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    margin-top: 4px;
+  }
+</style>

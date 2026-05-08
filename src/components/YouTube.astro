@@ -1,0 +1,462 @@
+---
+---
+
+<section id="youtube" class="py-24 bg-bg-secondary relative">
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(255,0,0,0.3), transparent)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Left content -->
+      <div class="animate-on-scroll">
+        <div class="section-label" style="color: #FF3333">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </div>
+        <h2 class="section-title">
+          Conteúdo esportivo<br/>
+          <span style="color: #FF3333">todos os dias</span>
+        </h2>
+        <p class="section-subtitle mb-8">
+          Análises, bastidores, reações ao vivo e os melhores momentos dos programas. Conteúdo original que vai direto ao ponto.
+        </p>
+
+        <div class="yt-stats">
+          <div class="yt-stat">
+            <div class="yt-stat-icon">🎬</div>
+            <div class="yt-stat-info">
+              <div class="yt-stat-label">Conteúdo frequente</div>
+              <div class="yt-stat-sub">Clips e análises dos programas</div>
+            </div>
+          </div>
+          <div class="yt-stat">
+            <div class="yt-stat-icon">🏆</div>
+            <div class="yt-stat-info">
+              <div class="yt-stat-label">260 ativações/ano</div>
+              <div class="yt-stat-sub">Espaço garantido para marcas parceiras</div>
+            </div>
+          </div>
+          <div class="yt-stat">
+            <div class="yt-stat-icon">📈</div>
+            <div class="yt-stat-info">
+              <div class="yt-stat-label">Base em crescimento</div>
+              <div class="yt-stat-sub">Audiência orgânica e engajada</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent videos list -->
+        <div class="yt-recent-list mt-6" id="yt-recent-list">
+          <div class="yt-recent-loading">
+            <div class="yt-loading-dot"></div>
+            Carregando vídeos recentes...
+          </div>
+        </div>
+
+        <a href="https://www.youtube.com/@caiosorrisooficial" target="_blank" rel="noopener"
+           class="btn-primary mt-6 inline-flex" style="background: linear-gradient(135deg, #FF0000, #CC0000);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Ver canal completo
+        </a>
+      </div>
+
+      <!-- Right: Player -->
+      <div class="animate-on-scroll animate-delay-2">
+        <div class="yt-player-container" id="yt-player-container">
+          <!-- Main embed -->
+          <div class="yt-embed-inner">
+            <iframe
+              id="yt-main-iframe"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=caiosorrisooficial&rel=0"
+              title="Caio Sorriso no YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <!-- Channel bar -->
+          <a href="https://www.youtube.com/@caiosorrisooficial" target="_blank" rel="noopener" class="yt-channel-bar">
+            <div class="yt-channel-left">
+              <div class="yt-ch-avatar">CS</div>
+              <div>
+                <div class="yt-ch-name">Caio Sorriso Oficial</div>
+                <div class="yt-ch-handle">@caiosorrisooficial</div>
+              </div>
+            </div>
+            <div class="yt-subscribe-pill">Inscrever-se</div>
+          </a>
+
+          <!-- Video thumbnails -->
+          <div class="yt-thumbs-row" id="yt-thumbs-row">
+            <div class="yt-thumb-placeholder"></div>
+            <div class="yt-thumb-placeholder"></div>
+            <div class="yt-thumb-placeholder"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .yt-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .yt-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+  }
+
+  .yt-stat-icon { font-size: 1.2rem; }
+
+  .yt-stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1px;
+  }
+
+  .yt-stat-sub {
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Recent list */
+  .yt-recent-loading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    padding: 8px 0;
+  }
+
+  .yt-loading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF0000;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .yt-recent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 7px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .yt-recent-item:hover {
+    border-color: rgba(255,0,0,0.25);
+    background: #132240;
+  }
+
+  .yt-recent-thumb {
+    width: 80px;
+    height: 45px;
+    border-radius: 4px;
+    object-fit: cover;
+    background: #0C1830;
+    flex-shrink: 0;
+  }
+
+  .yt-recent-info { flex: 1; min-width: 0; }
+
+  .yt-recent-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+  }
+
+  .yt-recent-date {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .yt-recent-play {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,0,0,0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    padding-left: 2px;
+  }
+
+  /* Player */
+  .yt-player-container {
+    background: #0F1E35;
+    border: 1px solid rgba(255,0,0,0.18);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .yt-embed-inner {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+  }
+
+  .yt-embed-inner iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .yt-channel-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .yt-channel-bar:hover { background: rgba(255,0,0,0.05); }
+
+  .yt-channel-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .yt-ch-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF0000, #AA0000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .yt-ch-name {
+    font-size: 0.83rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .yt-ch-handle {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.38);
+  }
+
+  .yt-subscribe-pill {
+    background: #FF0000;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* Thumb row */
+  .yt-thumbs-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .yt-thumb-placeholder {
+    aspect-ratio: 16/9;
+    background: #0C1830;
+  }
+
+  .yt-thumb-item {
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #0C1830;
+  }
+
+  .yt-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .yt-thumb-item:hover .yt-thumb-img { transform: scale(1.06); }
+
+  .yt-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .yt-thumb-item:hover .yt-thumb-overlay { opacity: 1; }
+
+  .yt-thumb-play {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,0,0,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    padding-left: 2px;
+  }
+</style>
+
+<script>
+  interface VideoItem {
+    title: string;
+    link: string;
+    thumbnail: string;
+    pubDate: string;
+  }
+
+  function extractVideoId(url: string): string | null {
+    const m = url.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : null;
+  }
+
+  function formatDate(dateStr: string): string {
+    try {
+      const d = new Date(dateStr);
+      return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+    } catch { return ''; }
+  }
+
+  async function loadYouTubeVideos() {
+    const recentList = document.getElementById('yt-recent-list');
+    const thumbsRow = document.getElementById('yt-thumbs-row');
+    const mainIframe = document.getElementById('yt-main-iframe') as HTMLIFrameElement;
+
+    // Possible RSS endpoints for the channel
+    const rssEndpoints = [
+      'https://www.youtube.com/feeds/videos.xml?user=caiosorrisooficial',
+    ];
+
+    let videos: VideoItem[] = [];
+
+    for (const rssUrl of rssEndpoints) {
+      try {
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=6`;
+        const res = await fetch(apiUrl, { signal: AbortSignal.timeout(6000) });
+        if (!res.ok) continue;
+        const data = await res.json();
+        if (data.status !== 'ok' || !data.items?.length) continue;
+
+        videos = data.items.slice(0, 6).map((item: any): VideoItem => ({
+          title: item.title,
+          link: item.link,
+          thumbnail: item.thumbnail || item.enclosure?.link || '',
+          pubDate: item.pubDate,
+        }));
+        break;
+      } catch (_) { continue; }
+    }
+
+    if (videos.length === 0) {
+      if (recentList) recentList.innerHTML = '';
+      return;
+    }
+
+    // Update main embed to latest video
+    const firstId = extractVideoId(videos[0].link);
+    if (firstId && mainIframe) {
+      mainIframe.src = `https://www.youtube.com/embed/${firstId}?rel=0&modestbranding=1`;
+    }
+
+    // Build recent video list
+    if (recentList) {
+      recentList.innerHTML = '';
+      videos.slice(0, 3).forEach(video => {
+        const id = extractVideoId(video.link);
+        if (!id) return;
+        const a = document.createElement('a');
+        a.href = video.link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'yt-recent-item';
+
+        const thumbUrl = video.thumbnail || `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+        a.innerHTML = `
+          <img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" class="yt-recent-thumb" alt="" loading="lazy" />
+          <div class="yt-recent-info">
+            <div class="yt-recent-title">${video.title}</div>
+            <div class="yt-recent-date">${formatDate(video.pubDate)}</div>
+          </div>
+          <div class="yt-recent-play">▶</div>
+        `;
+
+        // Click to change main embed
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (mainIframe) {
+            mainIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+          }
+          document.querySelectorAll('.yt-recent-item').forEach(el => el.classList.remove('active'));
+          a.classList.add('active');
+        });
+
+        recentList.appendChild(a);
+      });
+    }
+
+    // Build thumbnail row
+    if (thumbsRow) {
+      thumbsRow.innerHTML = '';
+      videos.slice(0, 3).forEach(video => {
+        const id = extractVideoId(video.link);
+        if (!id) return;
+        const div = document.createElement('div');
+        div.className = 'yt-thumb-item';
+        div.innerHTML = `
+          <img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" class="yt-thumb-img" alt="" loading="lazy" />
+          <div class="yt-thumb-overlay"><div class="yt-thumb-play">▶</div></div>
+        `;
+        div.addEventListener('click', () => {
+          if (mainIframe) {
+            mainIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+          }
+        });
+        thumbsRow.appendChild(div);
+      });
+    }
+  }
+
+  loadYouTubeVideos();
+</script>

@@ -1,0 +1,330 @@
+---
+const sponsors = [
+  {
+    name: 'Bete Esporte',
+    category: 'Patrocinadora Oficial',
+    url: 'https://betesporte.bet.br',
+    logo: `${import.meta.env.BASE_URL}images/sponsor-bete.png`,
+  },
+];
+
+const opportunities = [
+  {
+    icon: '📺',
+    title: 'Patrocínio de Programa',
+    desc: 'Tenha sua marca vinculada a um dos programas esportivos mais assistidos da TV aberta.',
+    color: '#0099FF',
+  },
+  {
+    icon: '🎙️',
+    title: 'Branded Content',
+    desc: 'Conteúdos customizados que integram sua marca à narrativa de Caio de forma natural e impactante.',
+    color: '#00C896',
+  },
+  {
+    icon: '📱',
+    title: 'Ativações Digitais',
+    desc: 'Campanhas nas redes sociais com alcance orgânico e engajamento real no nicho esportivo.',
+    color: '#FFB400',
+  },
+  {
+    icon: '🏆',
+    title: 'Eventos e Copa',
+    desc: 'Associe sua marca aos maiores eventos esportivos do mundo com Caio na Copa do Mundo 2026.',
+    color: '#9B6FF5',
+  },
+];
+---
+
+<section id="anuncie" class="py-24 bg-bg-primary relative overflow-hidden">
+  <!-- BG decoration -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(0,153,255,0.06) 0%, transparent 70%)"></div>
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,153,255,0.3), transparent)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+
+    <!-- Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="section-label justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Patrocínio
+      </div>
+      <h2 class="section-title text-center">
+        Sua marca no<br/>
+        <span class="gradient-text">coração do esporte</span>
+      </h2>
+      <p class="section-subtitle mx-auto text-center">
+        Conecte sua empresa a uma das maiores audiências esportivas do Brasil. Anuncie em TV aberta, digital e eventos ao vivo.
+      </p>
+    </div>
+
+    <!-- Opportunities grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {opportunities.map((op, i) => (
+        <div class={`opportunity-card animate-on-scroll animate-delay-${i+1}`} style={`--color: ${op.color}`}>
+          <div class="opp-icon">{op.icon}</div>
+          <h3 class="opp-title">{op.title}</h3>
+          <p class="opp-desc">{op.desc}</p>
+          <div class="opp-glow" style={`background: ${op.color}`}></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Sponsors section -->
+    {sponsors.length > 0 && (
+      <div class="sponsors-section animate-on-scroll mb-16">
+        <div class="sponsors-label">Patrocinadores Atuais</div>
+        <div class="sponsors-grid">
+          {sponsors.map((s) => (
+            <a href={s.url} target="_blank" rel="noopener" class="sponsor-card">
+              <img
+                src={s.logo}
+                alt={s.name}
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"
+              />
+              <span class="sponsor-name-fallback" style="display:none">{s.name}</span>
+              <div class="sponsor-cat">{s.category}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Big CTA -->
+    <div class="big-cta animate-on-scroll">
+      <div class="big-cta-content">
+        <div class="big-cta-badge">Oportunidade Exclusiva</div>
+        <h3 class="big-cta-title">Pronto para colocar sua<br/>marca em evidência?</h3>
+        <p class="big-cta-sub">
+          Entre em contato com nossa equipe comercial. Analisamos seu objetivo e criamos a estratégia ideal para conectar sua marca a milhões de brasileiros.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8">
+          <a href="#contato" class="btn-primary">
+            Falar com o Comercial
+          </a>
+          <a href="#midia-kit" class="btn-outline">
+            Ver Mídia Kit Completo
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats on right -->
+      <div class="big-cta-stats">
+        <div class="cta-stat">
+          <div class="cta-stat-num">40+</div>
+          <div class="cta-stat-label">Cidades</div>
+        </div>
+        <div class="cta-stat">
+          <div class="cta-stat-num">3</div>
+          <div class="cta-stat-label">Emissoras</div>
+        </div>
+        <div class="cta-stat">
+          <div class="cta-stat-num">R$114M</div>
+          <div class="cta-stat-label">Valor/Ano</div>
+        </div>
+        <div class="cta-stat">
+          <div class="cta-stat-num">1092</div>
+          <div class="cta-stat-label">Ativações Digitais</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .opportunity-card {
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .opportunity-card:hover {
+    border-color: color-mix(in srgb, var(--color) 40%, transparent);
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--color) 15%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .opp-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .opp-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+
+  .opp-desc {
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .opp-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.5;
+  }
+
+  .sponsors-section {
+    text-align: center;
+  }
+
+  .sponsors-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 20px;
+  }
+
+  .sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 20px 32px;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 160px;
+  }
+
+  .sponsor-card:hover {
+    border-color: rgba(0,153,255,0.3);
+    background: #132240;
+  }
+
+  .sponsor-card img { max-height: 40px; max-width: 120px; object-fit: contain; filter: brightness(0) invert(1) opacity(0.7); }
+  .sponsor-card:hover img { opacity: 1; filter: none; }
+
+  .sponsor-name-fallback {
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+  }
+
+  .sponsor-cat {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .big-cta {
+    background: linear-gradient(135deg, #0C2040 0%, #091528 100%);
+    border: 1px solid rgba(0,153,255,0.25);
+    border-radius: 16px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .big-cta::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0,153,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .big-cta {
+      grid-template-columns: 1fr;
+      padding: 28px;
+      gap: 24px;
+    }
+  }
+
+  .big-cta-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFB400;
+    background: rgba(255,180,0,0.1);
+    border: 1px solid rgba(255,180,0,0.25);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .big-cta-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin: 0 0 12px;
+  }
+
+  .big-cta-sub {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0;
+  }
+
+  .big-cta-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .cta-stat {
+    text-align: center;
+    padding: 16px;
+    background: rgba(0,153,255,0.08);
+    border: 1px solid rgba(0,153,255,0.15);
+    border-radius: 8px;
+  }
+
+  .cta-stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0099FF;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .cta-stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+</style>

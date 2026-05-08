@@ -1,0 +1,268 @@
+---
+const packages = [
+  {
+    id: 'tv',
+    label: 'Televisão',
+    icon: '📺',
+    color: '#0099FF',
+    items: [
+      { name: 'VHT Integrada de Abertura 5"', qtd: '52/ano', type: 'tv' },
+      { name: 'Comercial 30"', qtd: '104/ano', type: 'tv' },
+      { name: 'Ação Integrada 90"', qtd: '52/ano', type: 'destaque' },
+      { name: 'Intervenção na Tela 15"', qtd: '52/ano', type: 'tv' },
+      { name: 'VHT Integrada de Encerramento 5"', qtd: '52/ano', type: 'tv' },
+      { name: 'Assinatura em Chamadas 5"', qtd: '208/ano', type: 'destaque' },
+      { name: 'Comercial 30" junto às Chamadas', qtd: '208/ano', type: 'tv' },
+    ],
+  },
+  {
+    id: 'digital',
+    label: 'Digital',
+    icon: '📱',
+    color: '#00C896',
+    items: [
+      { name: 'YouTube — Ativações de Marca', qtd: '260/ano', type: 'digital' },
+      { name: 'Instagram — Ativações de Marca', qtd: '312/ano', type: 'destaque' },
+      { name: 'Facebook — Ativações de Marca', qtd: '312/ano', type: 'digital' },
+      { name: 'TikTok — Ativações de Marca', qtd: '208/ano', type: 'digital' },
+    ],
+  },
+  {
+    id: 'branded',
+    label: 'Branded Content',
+    icon: '🎬',
+    color: '#FFB400',
+    items: [
+      { name: 'Inserção de Produto em Cena', qtd: 'Sob consulta', type: 'premium' },
+      { name: 'Apresentação Patrocinada', qtd: 'Sob consulta', type: 'premium' },
+      { name: 'Quadro Exclusivo da Marca', qtd: 'Sob consulta', type: 'premium' },
+      { name: 'Vinheta de Patrocinador', qtd: 'Sob consulta', type: 'premium' },
+      { name: 'Post Publi nas Redes Sociais', qtd: 'Sob consulta', type: 'digital' },
+      { name: 'Story / Reels Patrocinado', qtd: 'Sob consulta', type: 'digital' },
+    ],
+  },
+];
+---
+
+<section id="midia-kit" class="py-24 bg-bg-secondary relative">
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(255,180,0,0.4), transparent)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="section-label justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Mídia Kit
+      </div>
+      <h2 class="section-title text-center">
+        <span class="gradient-text-gold">Oportunidades</span><br/>
+        de patrocínio
+      </h2>
+      <p class="section-subtitle mx-auto text-center">
+        Formatos multiplataforma para conectar sua marca a milhões de brasileiros apaixonados por esporte.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tab-container animate-on-scroll">
+      <div class="tab-nav">
+        {packages.map((pkg, i) => (
+          <button
+            class={`tab-btn ${i === 0 ? 'active' : ''}`}
+            data-tab={pkg.id}
+            style={`--color: ${pkg.color}`}
+          >
+            <span>{pkg.icon}</span>
+            <span>{pkg.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {packages.map((pkg, i) => (
+        <div class={`tab-panel ${i === 0 ? 'active' : ''}`} data-panel={pkg.id} style={`--color: ${pkg.color}`}>
+          <div class="panel-grid">
+            {pkg.items.map((item) => (
+              <div class={`kit-item ${item.type}`}>
+                <div class="kit-item-dot" style={`background: ${pkg.color}`}></div>
+                <div class="kit-item-name">{item.name}</div>
+                <div class="kit-item-qtd">{item.qtd}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA row -->
+    <div class="kit-cta-row animate-on-scroll mt-12">
+      <div class="kit-cta-content">
+        <div class="kit-cta-icon">🚀</div>
+        <div>
+          <div class="kit-cta-title">Quer uma proposta personalizada?</div>
+          <div class="kit-cta-sub">Nossa equipe comercial elabora o pacote ideal para o objetivo da sua marca.</div>
+        </div>
+      </div>
+      <a href="#contato" class="btn-primary flex-shrink-0">Solicitar Proposta</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tab-container {
+    background: #0F1E35;
+    border: 1px solid rgba(0,153,255,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .tab-nav {
+    display: flex;
+    border-bottom: 1px solid rgba(0,153,255,0.12);
+  }
+
+  .tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    bottom: -1px;
+  }
+
+  .tab-btn:hover {
+    color: rgba(255,255,255,0.85);
+    background: rgba(0,153,255,0.05);
+  }
+
+  .tab-btn.active {
+    color: var(--color, #0099FF);
+    border-bottom-color: var(--color, #0099FF);
+    background: color-mix(in srgb, var(--color, #0099FF) 8%, transparent);
+  }
+
+  .tab-panel {
+    display: none;
+    padding: 24px;
+  }
+
+  .tab-panel.active { display: block; }
+
+  .panel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+  }
+
+  .kit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s;
+  }
+
+  .kit-item:hover {
+    background: rgba(0,153,255,0.06);
+    border-color: rgba(0,153,255,0.2);
+  }
+
+  .kit-item.destaque {
+    background: color-mix(in srgb, var(--color, #0099FF) 6%, transparent);
+    border-color: color-mix(in srgb, var(--color, #0099FF) 20%, transparent);
+  }
+
+  .kit-item.premium {
+    background: rgba(255,180,0,0.06);
+    border-color: rgba(255,180,0,0.2);
+  }
+
+  .kit-item-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .kit-item-name {
+    flex: 1;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+  }
+
+  .kit-item-qtd {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color, #0099FF);
+    white-space: nowrap;
+  }
+
+  .kit-cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(135deg, rgba(0,153,255,0.1), rgba(0,153,255,0.04));
+    border: 1px solid rgba(0,153,255,0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+
+  @media (max-width: 640px) {
+    .kit-cta-row { flex-direction: column; text-align: center; }
+    .tab-btn span:last-child { display: none; }
+  }
+
+  .kit-cta-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .kit-cta-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .kit-cta-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .kit-cta-sub {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab');
+
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.querySelector(`[data-panel="${tabId}"]`)?.classList.add('active');
+    });
+  });
+</script>

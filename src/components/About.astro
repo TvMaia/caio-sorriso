@@ -1,0 +1,249 @@
+---
+---
+
+<section id="sobre" class="py-24 bg-bg-primary relative overflow-hidden">
+  <!-- Background accent -->
+  <div class="absolute left-0 top-0 bottom-0 w-1/2" style="background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba(0,200,150,0.05) 0%, transparent 70%)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Photo side -->
+      <div class="relative animate-on-scroll">
+        <div class="about-photo-frame">
+          <img
+            src={`${import.meta.env.BASE_URL}images/caio-bio.jpg`}
+            alt="Caio Sorriso — Apresentador Esportivo"
+            class="about-photo"
+            onerror="this.parentElement.classList.add('no-photo')"
+          />
+          <!-- Placeholder when no image -->
+          <div class="about-photo-placeholder">
+            <div class="placeholder-initials">CS</div>
+          </div>
+
+          <!-- Decorative corner -->
+          <div class="corner-accent tl"></div>
+          <div class="corner-accent br"></div>
+        </div>
+
+        <!-- Floating badge -->
+        <div class="floating-badge animate-float">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB400" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div>
+            <div class="badge-number">+15</div>
+            <div class="badge-label">Anos na TV</div>
+          </div>
+        </div>
+
+        <!-- Decorative dots grid -->
+        <div class="dots-grid" aria-hidden="true"></div>
+      </div>
+
+      <!-- Content side -->
+      <div class="animate-on-scroll animate-delay-2">
+        <div class="section-label">Quem é</div>
+        <h2 class="section-title">
+          Mais que um<br/>
+          <span class="gradient-text">apresentador.</span><br/>
+          Uma marca.
+        </h2>
+
+        <p class="section-subtitle mb-6">
+          Caio Sorriso é um dos nomes mais carismáticos do jornalismo esportivo brasileiro. Com passagens por grandes emissoras como <strong class="text-white">RedeTV! e Band</strong>, ele une análise técnica com comunicação popular — tornando o esporte emocionante e acessível para milhões de brasileiros.
+        </p>
+
+        <p class="section-subtitle mb-10">
+          Sua energia contagiante e irreverência fazem dele mais do que um apresentador: um <strong class="text-white">conector de gerações</strong>, um amplificador de marcas e uma das vozes mais confiáveis do esporte no Brasil.
+        </p>
+
+        <!-- Trait pills -->
+        <div class="flex flex-wrap gap-3 mb-10">
+          {['Irreverente', 'Carismático', 'Analítico', 'Acessível', 'Multiplataforma', 'Copa do Mundo 2026'].map((trait) => (
+            <span class="trait-pill">{trait}</span>
+          ))}
+        </div>
+
+        <!-- Quick facts -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="fact-card">
+            <div class="fact-icon">📺</div>
+            <div>
+              <div class="fact-title">TV Aberta</div>
+              <div class="fact-desc">RedeTV! • Band</div>
+            </div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-icon">🏆</div>
+            <div>
+              <div class="fact-title">Copa do Mundo</div>
+              <div class="fact-desc">Cobertura confirmada 2026</div>
+            </div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-icon">🎙️</div>
+            <div>
+              <div class="fact-title">3 Programas</div>
+              <div class="fact-desc">Simultâneos em emissoras nacionais</div>
+            </div>
+          </div>
+          <div class="fact-card">
+            <div class="fact-icon">📱</div>
+            <div>
+              <div class="fact-title">Digital</div>
+              <div class="fact-desc">Instagram • YouTube • TikTok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-photo-frame {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: #0F1E35;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .about-photo-frame.no-photo .about-photo { display: none; }
+  .about-photo-frame.no-photo .about-photo-placeholder { display: flex; }
+
+  .about-photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0F1E35, #0C2040);
+  }
+
+  .placeholder-initials {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(0,153,255,0.2);
+  }
+
+  .corner-accent {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: #0099FF;
+    border-style: solid;
+  }
+
+  .corner-accent.tl {
+    top: 0;
+    left: 0;
+    border-width: 3px 0 0 3px;
+    border-radius: 8px 0 0 0;
+  }
+
+  .corner-accent.br {
+    bottom: 0;
+    right: 0;
+    border-width: 0 3px 3px 0;
+    border-radius: 0 0 8px 0;
+  }
+
+  .floating-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: #FFB400;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 30px rgba(255,180,0,0.35);
+  }
+
+  .badge-number {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #050C18;
+    line-height: 1;
+  }
+
+  .badge-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(5,12,24,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .dots-grid {
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    background-image: radial-gradient(rgba(0,153,255,0.4) 1px, transparent 1px);
+    background-size: 16px 16px;
+    z-index: -1;
+  }
+
+  .trait-pill {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    background: rgba(15,30,53,0.8);
+    border: 1px solid rgba(0,153,255,0.2);
+    border-radius: 100px;
+    padding: 6px 14px;
+    transition: all 0.2s;
+  }
+
+  .trait-pill:hover {
+    border-color: rgba(0,153,255,0.5);
+    color: #0099FF;
+  }
+
+  .fact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #0F1E35;
+    border: 1px solid rgba(0,153,255,0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: all 0.2s;
+  }
+
+  .fact-card:hover {
+    border-color: rgba(0,153,255,0.3);
+    background: #132240;
+  }
+
+  .fact-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .fact-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  .fact-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+  }
+</style>

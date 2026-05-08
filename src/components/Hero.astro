@@ -1,0 +1,266 @@
+---
+---
+
+<section id="inicio" class="hero-section relative min-h-screen flex items-center overflow-hidden">
+
+  <!-- Background gradient layers -->
+  <div class="absolute inset-0 bg-bg-primary"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 80% at 70% 50%, rgba(0,60,120,0.35) 0%, transparent 70%)"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0,200,150,0.08) 0%, transparent 60%)"></div>
+
+  <!-- Decorative grid lines -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(0,153,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,153,255,1) 1px, transparent 1px); background-size: 80px 80px;"></div>
+
+  <!-- Hero photo placeholder / background -->
+  <div class="absolute right-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden">
+    <div class="hero-photo-container w-full h-full">
+      <!-- Photo will appear here — see image guide at the bottom of this page -->
+      <img
+        src={`${import.meta.env.BASE_URL}images/hero-caio.png`}
+        alt="Caio Sorriso"
+        class="hero-photo"
+        onerror="this.style.display='none'; document.getElementById('hero-photo-fallback').style.display='flex'"
+      />
+      <!-- Fallback gradient when no image -->
+      <div id="hero-photo-fallback" class="w-full h-full items-center justify-center hidden">
+        <div style="background: radial-gradient(ellipse at center, rgba(0,80,160,0.4) 0%, transparent 70%); width:100%; height:100%;"></div>
+      </div>
+    </div>
+    <!-- Left fade overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(90deg, #050C18 0%, #050C18 15%, rgba(5,12,24,0.8) 40%, rgba(5,12,24,0.2) 70%, transparent 100%)"></div>
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-48" style="background: linear-gradient(to top, #050C18, transparent)"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-20 w-full">
+    <div class="max-w-2xl">
+
+      <!-- Badge -->
+      <div class="hero-badge animate-on-scroll">
+        <span class="dot"></span>
+        <span>Ao vivo na TV aberta brasileira</span>
+      </div>
+
+      <!-- Name / Headline -->
+      <h1 class="hero-title animate-on-scroll animate-delay-1">
+        <span class="block text-white">CAIO</span>
+        <span class="block gradient-text">SORRISO</span>
+      </h1>
+
+      <!-- Tagline -->
+      <p class="hero-tagline animate-on-scroll animate-delay-2">
+        A voz que conecta o Brasil ao esporte.<br/>
+        <span class="text-white/60">Apresentador. Analista. Marca.</span>
+      </p>
+
+      <!-- Channel badges -->
+      <div class="flex flex-wrap gap-3 mt-6 mb-8 animate-on-scroll animate-delay-3">
+        <span class="channel-badge redetv">RedeTV!</span>
+        <span class="channel-badge band">Band</span>
+        <span class="channel-badge copa">Copa do Mundo</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 animate-on-scroll animate-delay-4">
+        <a href="#midia-kit" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Ver Mídia Kit
+        </a>
+        <a href="#contato" class="btn-outline">
+          Fale com o Comercial
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="hero-stats animate-on-scroll animate-delay-5">
+        <div class="hero-stat">
+          <span class="stat-number" data-target="40" data-suffix="+">0+</span>
+          <span class="stat-label">Praças Nacionais</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-target="3" data-suffix=" shows">0 shows</span>
+          <span class="stat-label">Programas Simultâneos</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-prefix="R$" data-target="114" data-suffix="M+">R$0M+</span>
+          <span class="stat-label">Valor de Mídia/Ano</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator animate-float">
+    <div class="scroll-mouse">
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: #050C18;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: saturate(0.9) brightness(0.85);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,153,255,0.1);
+    border: 1px solid rgba(0,153,255,0.3);
+    border-radius: 100px;
+    padding: 6px 16px 6px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0099FF;
+    margin-bottom: 24px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00C896;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,200,150,0.5); }
+    50% { box-shadow: 0 0 0 6px rgba(0,200,150,0); }
+  }
+
+  .hero-title {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px 0;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .channel-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 3px;
+  }
+
+  .channel-badge.redetv {
+    background: rgba(0,153,255,0.15);
+    border: 1px solid rgba(0,153,255,0.4);
+    color: #33AAFF;
+  }
+
+  .channel-badge.band {
+    background: rgba(255,180,0,0.12);
+    border: 1px solid rgba(255,180,0,0.35);
+    color: #FFB400;
+  }
+
+  .channel-badge.sbt {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+  }
+
+  .channel-badge.copa {
+    background: rgba(0,200,150,0.12);
+    border: 1px solid rgba(0,200,150,0.35);
+    color: #00C896;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: rgba(15,30,53,0.6);
+    border: 1px solid rgba(0,153,255,0.15);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(0,153,255,0.2);
+  }
+
+  .stat-number {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0099FF;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .scroll-mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .scroll-dot {
+    width: 4px;
+    height: 8px;
+    background: rgba(0,153,255,0.8);
+    border-radius: 2px;
+    animation: scrollDot 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollDot {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(12px); opacity: 0; }
+  }
+</style>

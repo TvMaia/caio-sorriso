@@ -1,0 +1,141 @@
+---
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+
+    <!-- Logo -->
+    <a href="#inicio" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded bg-brand-blue flex items-center justify-center font-display font-black text-lg text-white group-hover:shadow-blue-glow transition-all">
+        CS
+      </div>
+      <div class="hidden sm:block">
+        <span class="font-display font-black text-xl text-white tracking-wide leading-none">CAIO</span>
+        <span class="font-display font-black text-xl text-brand-blue tracking-wide leading-none"> SORRISO</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-8 list-none m-0 p-0">
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#programas" class="nav-link">Programas</a></li>
+      <li><a href="#numeros" class="nav-link">Números</a></li>
+      <li><a href="#midia-kit" class="nav-link">Mídia Kit</a></li>
+      <li><a href="#produtos" class="nav-link">Produtos</a></li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <a href="#contato" class="btn-primary text-sm">
+        Seja Patrocinador
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="lg:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5" aria-label="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden px-6 pb-6">
+    <ul class="flex flex-col gap-4 list-none m-0 p-0 pt-4 border-t border-white/10">
+      <li><a href="#sobre" class="nav-link-mobile">Sobre</a></li>
+      <li><a href="#programas" class="nav-link-mobile">Programas</a></li>
+      <li><a href="#numeros" class="nav-link-mobile">Números</a></li>
+      <li><a href="#midia-kit" class="nav-link-mobile">Mídia Kit</a></li>
+      <li><a href="#produtos" class="nav-link-mobile">Produtos</a></li>
+      <li><a href="#contato" class="btn-primary justify-center mt-2">Seja Patrocinador</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  #navbar {
+    background: transparent;
+  }
+
+  #navbar.scrolled {
+    background: rgba(5, 12, 24, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 153, 255, 0.12);
+  }
+
+  .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0099FF;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link-mobile {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.2s;
+  }
+
+  .nav-link-mobile:hover { color: #0099FF; }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: all 0.3s;
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  });
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
+</script>

@@ -1,0 +1,261 @@
+---
+const stats = [
+  {
+    number: 114,
+    prefix: 'R$',
+    suffix: 'M+',
+    label: 'Valor de Mídia',
+    sublabel: 'Entrega de mídia anual consolidada',
+    icon: '💰',
+    color: '#FFB400',
+  },
+  {
+    number: 40,
+    prefix: '',
+    suffix: '+',
+    label: 'Praças Nacionais',
+    sublabel: 'Cobertura TV aberta',
+    icon: '📡',
+    color: '#0099FF',
+  },
+  {
+    number: 1092,
+    prefix: '',
+    suffix: '',
+    label: 'Ativações Digitais/Ano',
+    sublabel: 'YouTube + Instagram + TikTok + Facebook',
+    icon: '📲',
+    color: '#00C896',
+  },
+  {
+    number: 3,
+    prefix: '',
+    suffix: ' shows',
+    label: 'Programas Simultâneos',
+    sublabel: 'RedeTV! • Band',
+    icon: '🎙️',
+    color: '#9B6FF5',
+  },
+];
+---
+
+<section id="numeros" class="py-24 bg-bg-secondary relative">
+  <!-- Decorative lines -->
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,153,255,0.4), transparent)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="section-label justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Números
+      </div>
+      <h2 class="section-title text-center">
+        Os números que<br/>
+        <span class="gradient-text">falam por si</span>
+      </h2>
+      <p class="section-subtitle mx-auto text-center">
+        Alcance comprovado. Presença nacional. Impacto real.
+      </p>
+    </div>
+
+    <!-- Stats grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      {stats.map((stat, i) => (
+        <div class={`stat-card animate-on-scroll animate-delay-${i + 1}`} style={`--color: ${stat.color}`}>
+          <div class="stat-card-icon" style={`background: ${stat.color}15`}>{stat.icon}</div>
+          <div class="stat-card-number" data-target={stat.number} data-prefix={stat.prefix} data-suffix={stat.suffix}>
+            {stat.prefix}0{stat.suffix}
+          </div>
+          <div class="stat-card-label">{stat.label}</div>
+          <div class="stat-card-sublabel">{stat.sublabel}</div>
+          <!-- Glow line at bottom -->
+          <div class="stat-card-glow" style={`background: ${stat.color}`}></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Media value callout -->
+    <div class="media-value-callout animate-on-scroll mt-12">
+      <div class="callout-left">
+        <div class="callout-label">Entrega de Mídia — 12 meses (consolidado)</div>
+        <div class="callout-value">R$ 114.486.450,00</div>
+        <div class="callout-sub">Valor consolidado de mídia TV + Digital | Presença nacional</div>
+      </div>
+      <div class="callout-right">
+        <div class="callout-detail">
+          <span class="detail-num">52</span>
+          <span class="detail-txt">VHT Abertura 5"</span>
+        </div>
+        <div class="callout-detail">
+          <span class="detail-num">104</span>
+          <span class="detail-txt">Comercial 30"</span>
+        </div>
+        <div class="callout-detail">
+          <span class="detail-num">52</span>
+          <span class="detail-txt">Ação Integrada 90"</span>
+        </div>
+        <div class="callout-detail">
+          <span class="detail-num">312</span>
+          <span class="detail-txt">Ativações Instagram</span>
+        </div>
+        <div class="callout-detail">
+          <span class="detail-num">260</span>
+          <span class="detail-txt">Ativações YouTube</span>
+        </div>
+        <div class="callout-detail">
+          <span class="detail-num">208</span>
+          <span class="detail-txt">Ativações TikTok</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stat-card {
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 28px 20px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .stat-card:hover {
+    border-color: var(--color, #0099FF);
+    border-opacity: 0.3;
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--color, #0099FF) 15%, transparent);
+    transform: translateY(-3px);
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color, #0099FF) 6%, transparent) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .stat-card:hover::before { opacity: 1; }
+
+  .stat-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 16px;
+  }
+
+  .stat-card-number {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--color, #0099FF);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-card-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .stat-card-sublabel {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+  }
+
+  .stat-card-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.6;
+  }
+
+  .media-value-callout {
+    background: linear-gradient(135deg, rgba(255,180,0,0.08) 0%, rgba(15,30,53,0.8) 100%);
+    border: 1px solid rgba(255,180,0,0.25);
+    border-radius: 12px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .media-value-callout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .callout-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFB400;
+    margin-bottom: 8px;
+  }
+
+  .callout-value {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .callout-sub {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .callout-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .callout-right {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .callout-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+
+  .detail-num {
+    font-family: 'Barlow Condensed', Impact, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFB400;
+    line-height: 1;
+  }
+
+  .detail-txt {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    line-height: 1.3;
+  }
+</style>

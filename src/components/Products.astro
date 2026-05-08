@@ -1,0 +1,227 @@
+---
+const products = [
+  {
+    id: 'cursos',
+    emoji: '🎓',
+    title: 'Cursos do Caio Sorriso',
+    subtitle: 'Aprenda com quem vive o esporte',
+    desc: 'Cursos online sobre comunicação esportiva, análise tática, jornalismo e desenvolvimento pessoal. Em breve disponíveis nesta plataforma.',
+    price: 'Em breve',
+    cta: 'Quero ser avisado',
+    status: 'soon',
+    color: '#0099FF',
+  },
+  {
+    id: 'palestras',
+    emoji: '🎤',
+    title: 'Palestras',
+    subtitle: 'Para empresas, eventos e times',
+    desc: 'Palestras motivacionais e técnicas sobre esporte, liderança, comunicação e superação. Ideal para eventos corporativos e esportivos.',
+    price: 'Consulte',
+    cta: 'Solicitar Palestra',
+    status: 'available',
+    color: '#00C896',
+  },
+  {
+    id: 'livro',
+    emoji: '📚',
+    title: 'Livro',
+    subtitle: 'A história por trás das câmeras',
+    desc: 'A trajetória de Caio Sorriso no jornalismo esportivo brasileiro. Bastidores, histórias e lições de quem construiu uma carreira de mais de 15 anos na TV.',
+    price: 'Em breve',
+    cta: 'Pré-venda',
+    status: 'soon',
+    color: '#FFB400',
+  },
+];
+---
+
+<section id="produtos" class="py-24 relative" style="background: #060D1E;">
+  <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, rgba(0,200,150,0.3), transparent)"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="section-label justify-center">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Produtos
+      </div>
+      <h2 class="section-title text-center">
+        O universo Caio<br/>
+        <span class="gradient-text">além da TV</span>
+      </h2>
+      <p class="section-subtitle mx-auto text-center">
+        Conhecimento, inspiração e entretenimento. Produtos pensados para quem quer aprender com quem vive o esporte de verdade.
+      </p>
+    </div>
+
+    <!-- Products grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+      {products.map((product, i) => (
+        <div class={`product-card animate-on-scroll animate-delay-${i+1}`} style={`--color: ${product.color}`}>
+
+          <!-- Status badge -->
+          <div class={`product-status-badge ${product.status}`}>
+            {product.status === 'available' ? '✓ Disponível' : '⏳ Em breve'}
+          </div>
+
+          <!-- Icon -->
+          <div class="product-emoji">{product.emoji}</div>
+
+          <!-- Title -->
+          <h3 class="product-title">{product.title}</h3>
+          <div class="product-subtitle">{product.subtitle}</div>
+
+          <!-- Description -->
+          <p class="product-desc">{product.desc}</p>
+
+          <!-- Price / CTA -->
+          <div class="product-footer">
+            <div class="product-price" style={`color: ${product.color}`}>{product.price}</div>
+            <a href="#contato" class={`product-btn ${product.status}`} style={`border-color: ${product.color}; color: ${product.color}`}>
+              {product.cta} →
+            </a>
+          </div>
+
+          <!-- Bottom glow -->
+          <div class="product-glow" style={`background: ${product.color}`}></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Coming soon note -->
+    <div class="products-note animate-on-scroll mt-12 text-center">
+      <p class="text-sm text-white/40">
+        A plataforma de cursos e produtos do Caio Sorriso será lançada em breve neste site.
+        Para ser avisado no lançamento, <a href="#contato" class="text-brand-blue hover:underline">entre em contato</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-card {
+    background: #0F1E35;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s ease;
+  }
+
+  .product-card:hover {
+    border-color: color-mix(in srgb, var(--color) 35%, transparent);
+    box-shadow: 0 12px 50px color-mix(in srgb, var(--color) 12%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color) 5%, transparent) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .product-card:hover::before { opacity: 1; }
+
+  .product-status-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .product-status-badge.available {
+    background: rgba(0,200,150,0.12);
+    border: 1px solid rgba(0,200,150,0.3);
+    color: #00C896;
+  }
+
+  .product-status-badge.soon {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.4);
+  }
+
+  .product-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .product-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin: 0 0 6px;
+  }
+
+  .product-subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .product-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+    margin: 0 0 24px;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    margin-top: auto;
+  }
+
+  .product-price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .product-btn {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.2s;
+  }
+
+  .product-btn:hover {
+    background: color-mix(in srgb, var(--color) 15%, transparent);
+  }
+
+  .product-btn.soon {
+    opacity: 0.6;
+  }
+
+  .product-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.4;
+  }
+</style>

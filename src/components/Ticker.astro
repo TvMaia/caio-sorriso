@@ -1,0 +1,227 @@
+---
+---
+
+<div class="ticker-wrapper">
+  <div class="ticker-label">
+    <span class="ticker-dot"></span>
+    AO VIVO
+  </div>
+  <div class="ticker-viewport">
+    <div class="ticker-belt" id="ticker-belt">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .ticker-wrapper {
+    background: #030810;
+    border-top: 1px solid rgba(0, 153, 255, 0.15);
+    border-bottom: 1px solid rgba(0, 153, 255, 0.15);
+    display: flex;
+    align-items: stretch;
+    height: 52px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  .ticker-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #0099FF;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0 18px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .ticker-label::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 24px solid transparent;
+    border-bottom: 24px solid transparent;
+    border-left: 10px solid #0099FF;
+  }
+
+  .ticker-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: white;
+    animation: blink 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .ticker-viewport {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    padding-left: 12px;
+  }
+
+  /* Fade edges */
+  .ticker-viewport::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 60px;
+    background: linear-gradient(to right, transparent, #030810);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .ticker-belt {
+    display: inline-flex;
+    align-items: center;
+    height: 48px;
+    white-space: nowrap;
+    /* Animation defined via JS after content is ready */
+  }
+
+  .ticker-belt.running {
+    animation: tickerScroll var(--duration, 60s) linear infinite;
+  }
+
+  .ticker-belt:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* :global() needed for JS-created elements — Astro scoped styles don't apply to dynamic DOM */
+  :global(.news-card) {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #0D2040;
+    border: 1px solid rgba(0, 153, 255, 0.45);
+    border-radius: 6px;
+    padding: 0 18px;
+    margin: 0 7px;
+    height: 34px;
+    cursor: default;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+  }
+
+  :global(.news-card:hover) {
+    background: #122a55;
+    border-color: rgba(0, 153, 255, 0.8);
+  }
+
+  :global(.news-emoji) {
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  :global(.news-text) {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  const headlines = [
+    { emoji: '🏆', text: 'Copa do Mundo 2026 — Brasil terá abertura em San Francisco, nos EUA' },
+    { emoji: '⚽', text: 'Seleção Brasileira divulga lista de convocados para as Eliminatórias da Copa' },
+    { emoji: '🏈', text: 'NFL confirma temporada 2025/26 com dois jogos no Brasil em São Paulo' },
+    { emoji: '🏀', text: 'NBA Playoffs: Equipes se definem para as semifinais de conferência' },
+    { emoji: '📺', text: 'American Zone na RedeTV! — Domingos às 18h, esportes americanos para todo o Brasil' },
+    { emoji: '🎙️', text: 'Os Donos da Bola na Band — Análises e debates do futebol brasileiro toda semana' },
+    { emoji: '⚽', text: 'Brasileirão Série A: Rodada movimentada com viradas e gols de última hora' },
+    { emoji: '🏆', text: 'Champions League: Semifinais prometem confrontos históricos na Europa' },
+    { emoji: '🏈', text: 'Super Bowl: Recordes de audiência e momentos que marcaram a temporada' },
+    { emoji: '⚽', text: 'Copa do Brasil: Oitavas de final a caminho — confira os classificados' },
+    { emoji: '🏀', text: 'NBA Draft 2025: As maiores promessas que chegam à liga norte-americana' },
+    { emoji: '📱', text: 'Siga @caiosorrisooficial — análises esportivas diárias nas redes sociais' },
+  ];
+
+  function buildCards(items: typeof headlines) {
+    return items.map(item => {
+      const card = document.createElement('span');
+      card.className = 'news-card';
+
+      const emoji = document.createElement('span');
+      emoji.className = 'news-emoji';
+      emoji.textContent = item.emoji;
+
+      const text = document.createElement('span');
+      text.className = 'news-text';
+      text.textContent = item.text;
+
+      card.appendChild(emoji);
+      card.appendChild(text);
+      return card;
+    });
+  }
+
+  async function initTicker() {
+    const belt = document.getElementById('ticker-belt');
+    if (!belt) return;
+
+    let items = [...headlines];
+
+    // Try to fetch Portuguese sports news via GloboEsporte RSS
+    try {
+      const rssUrl = 'https://ge.globo.com/feed.html';
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=8`;
+      const res = await fetch(apiUrl, { signal: AbortSignal.timeout(5000) });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.status === 'ok' && data.items?.length > 0) {
+          const liveItems = data.items.slice(0, 8).map((a: any) => ({
+            emoji: '⚽',
+            text: a.title as string,
+          }));
+          items = [...liveItems, ...headlines.slice(0, 4)];
+        }
+      }
+    } catch (_) {
+      // Keep static headlines
+    }
+
+    // Build cards × 2 for seamless loop
+    const cards = buildCards(items);
+    const clone = buildCards(items);
+
+    cards.forEach(c => belt.appendChild(c));
+    clone.forEach(c => belt.appendChild(c));
+
+    // Measure total width of one set and set animation duration proportionally
+    // Give browser a frame to render
+    requestAnimationFrame(() => {
+      const totalWidth = belt.scrollWidth;
+      const halfWidth = totalWidth / 2;
+      // ~80px per second feels natural
+      const duration = Math.max(20, halfWidth / 80);
+      belt.style.setProperty('--duration', `${duration}s`);
+      belt.classList.add('running');
+    });
+  }
+
+  initTicker();
+</script>

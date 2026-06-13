@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://TvMaia.github.io',
-  base: '/caio-sorriso',
+  site: 'https://www.caiosorriso.com.br',
   integrations: [tailwind()],
   output: 'static',
 });

@@ -14,17 +14,7 @@ Gerar um relatório que VENDE o trabalho que está sendo feito. Não é um dump 
 
 ## Credenciais
 
-```
-TELEGRAM_BOT_TOKEN=*** (GitHub Secret)
-TELEGRAM_CHAT_ID=*** (GitHub Secret)
-
-# YouTube
-YOUTUBE_API_KEY=*** (GitHub Secret)
-YOUTUBE_CHANNEL_ID=UCwKwG8HtVRoU_BoEATv6GRg
-
-# Instagram — via Porter Metrics MCP
-# Autenticar no MCP quando solicitado (login Porter → autorizar Instagram do Caio)
-```
+Todas as credenciais (Telegram, YouTube, Porter/Instagram) estão armazenadas na **memória local do projeto** (`reference_credenciais.md`) — o Claude lê automaticamente ao abrir a sessão. Não precisam estar neste arquivo (repo público).
 
 ---
 

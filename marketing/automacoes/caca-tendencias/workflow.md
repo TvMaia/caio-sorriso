@@ -13,10 +13,7 @@ Encontrar temas esportivos com potencial de VIRALIZAÇÃO — não qualquer not�
 
 ## Credenciais
 
-```
-TELEGRAM_BOT_TOKEN=*** (armazenado como GitHub Secret)
-TELEGRAM_CHAT_ID=*** (armazenado como GitHub Secret)
-```
+Todas as credenciais (Telegram bot token, chat ID, YouTube API Key, etc.) estão armazenadas na **memória local do projeto** (`reference_credenciais.md`) — o Claude lê automaticamente ao abrir a sessão. Não precisam estar neste arquivo (repo público).
 
 ---
 

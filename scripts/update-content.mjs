@@ -34,19 +34,24 @@ function assignEmoji(title) {
   return '⚽';
 }
 
-function extractTitlesFromRSS(xml) {
-  const titles = [];
+function extractItemsFromRSS(xml) {
+  const results = [];
   const items = [...xml.matchAll(/<item[\s>][\s\S]*?<\/item>/gi)];
   for (const item of items) {
-    const cdataMatch = item[0].match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/i);
-    const plainMatch = item[0].match(/<title>([\s\S]*?)<\/title>/i);
-    const raw = cdataMatch ? cdataMatch[1] : plainMatch ? plainMatch[1] : null;
+    const cdataTitle = item[0].match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/i);
+    const plainTitle = item[0].match(/<title>([\s\S]*?)<\/title>/i);
+    const raw = cdataTitle ? cdataTitle[1] : plainTitle ? plainTitle[1] : null;
+
+    const cdataLink = item[0].match(/<link><!\[CDATA\[([\s\S]*?)\]\]><\/link>/i);
+    const plainLink = item[0].match(/<link>([\s\S]*?)<\/link>/i);
+    const url = (cdataLink ? cdataLink[1] : plainLink ? plainLink[1] : '').trim();
+
     if (raw) {
       const text = decodeEntities(raw).trim();
-      if (text && text.length > 10) titles.push(text);
+      if (text && text.length > 10) results.push({ text, url });
     }
   }
-  return titles;
+  return results;
 }
 
 async function fetchNews() {
@@ -77,14 +82,14 @@ async function fetchNews() {
         continue;
       }
       const xml = await res.text();
-      const titles = extractTitlesFromRSS(xml);
-      console.log(`${source.name}: ${titles.length} titles found`);
+      const items = extractItemsFromRSS(xml);
+      console.log(`${source.name}: ${items.length} items found`);
 
-      for (const title of titles) {
-        const key = title.toLowerCase().slice(0, 40);
+      for (const item of items) {
+        const key = item.text.toLowerCase().slice(0, 40);
         if (!seen.has(key)) {
           seen.add(key);
-          allHeadlines.push({ emoji: assignEmoji(title), text: title });
+          allHeadlines.push({ emoji: assignEmoji(item.text), text: item.text, url: item.url });
         }
       }
     } catch (e) {

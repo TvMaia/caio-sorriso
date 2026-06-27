@@ -168,9 +168,9 @@
   }
 
   .yt-recent-thumb {
-    width: 80px;
-    height: 45px;
-    border-radius: 4px;
+    width: 100px;
+    height: 56px;
+    border-radius: 6px;
     object-fit: cover;
     background: #0C1830;
     flex-shrink: 0;
@@ -179,14 +179,15 @@
   .yt-recent-info { flex: 1; min-width: 0; }
 
   .yt-recent-title {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: rgba(255,255,255,0.85);
-    line-height: 1.35;
-    white-space: nowrap;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
 
   .yt-recent-date {

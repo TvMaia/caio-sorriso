@@ -120,7 +120,8 @@
     padding: 0 18px;
     margin: 0 7px;
     height: 34px;
-    cursor: default;
+    cursor: pointer;
+    text-decoration: none;
     transition: background 0.2s, border-color 0.2s;
     flex-shrink: 0;
   }
@@ -160,10 +161,17 @@
     { emoji: '📱', text: 'Siga @caiosorrisooficial — análises esportivas diárias nas redes sociais' },
   ];
 
-  function buildCards(items: typeof headlines) {
+  function buildCards(items: Array<{emoji: string; text: string; url?: string}>) {
     return items.map(item => {
-      const card = document.createElement('span');
+      const card = item.url
+        ? document.createElement('a')
+        : document.createElement('span');
       card.className = 'news-card';
+      if (item.url && card instanceof HTMLAnchorElement) {
+        card.href = item.url;
+        card.target = '_blank';
+        card.rel = 'noopener';
+      }
 
       const emoji = document.createElement('span');
       emoji.className = 'news-emoji';

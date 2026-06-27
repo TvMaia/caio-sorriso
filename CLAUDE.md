@@ -15,6 +15,11 @@ Playbook completo: `marketing/automacoes/caca-tendencias/workflow.md`
 Puxa métricas das redes (Instagram via Porter Metrics MCP, YouTube via YouTube MCP Server), gera análise com insights, publica como HTML visual no repo `TvMaia/caio-relatorios` (GitHub Pages separado).
 Playbook completo: `marketing/automacoes/relatorios/workflow.md`
 
+### "Roda o cortai" / "Processa os vídeos da pasta X"
+Transcreve vídeos longos (Whisper local), identifica temas, sugere cortes virais, executa com ffmpeg, gera thumbs/títulos/descrições SEO e faz upload pro YouTube.
+Requer: Python + ffmpeg + faster-whisper instalados.
+Playbook completo: `marketing/automacoes/cortai/workflow.md`
+
 ## MCPs necessários para os workflows
 
 - **Porter Metrics** — Instagram analytics. Se não estiver autenticado, pedir pro Thiago logar (flow no navegador).
@@ -30,3 +35,4 @@ Playbook completo: `marketing/automacoes/relatorios/workflow.md`
 - Nunca editar código (src/) sem confirmação explícita do Thiago.
 - Thiago quer um relatório de tudo que foi feito com motivos — manter `05-log-mudancas.md` atualizado.
 - Idioma: sempre português brasileiro.
+- Dados do Instagram/Facebook: usar sempre Porter Metrics MCP, nunca screenshots do navegador (consome tokens demais). Se o Porter nao estiver conectado, avisar o Thiago e pedir para autenticar.

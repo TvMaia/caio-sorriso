@@ -185,23 +185,15 @@
 
     let items = [...headlines];
 
-    // Try to fetch Portuguese sports news via GloboEsporte RSS
     try {
-      const rssUrl = 'https://ge.globo.com/feed.html';
-      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=8`;
-      const res = await fetch(apiUrl, { signal: AbortSignal.timeout(5000) });
+      const res = await fetch('/data/news.json', { signal: AbortSignal.timeout(3000) });
       if (res.ok) {
         const data = await res.json();
-        if (data.status === 'ok' && data.items?.length > 0) {
-          const liveItems = data.items.slice(0, 8).map((a: any) => ({
-            emoji: '⚽',
-            text: a.title as string,
-          }));
-          items = [...liveItems, ...headlines.slice(0, 4)];
+        if (data.headlines?.length > 0) {
+          items = data.headlines;
         }
       }
     } catch (_) {
-      // Keep static headlines
     }
 
     // Build cards × 2 for seamless loop

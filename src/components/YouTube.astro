@@ -340,16 +340,12 @@
 </style>
 
 <script>
-  interface VideoItem {
+  interface YTVideo {
+    id: string;
     title: string;
-    link: string;
     thumbnail: string;
-    pubDate: string;
-  }
-
-  function extractVideoId(url: string): string | null {
-    const m = url.match(/[?&]v=([^&]+)/);
-    return m ? m[1] : null;
+    publishedAt: string;
+    url: string;
   }
 
   function formatDate(dateStr: string): string {
@@ -364,93 +360,67 @@
     const thumbsRow = document.getElementById('yt-thumbs-row');
     const mainIframe = document.getElementById('yt-main-iframe') as HTMLIFrameElement;
 
-    // Possible RSS endpoints for the channel
-    const rssEndpoints = [
-      'https://www.youtube.com/feeds/videos.xml?user=caiosorrisooficial',
-    ];
+    let videos: YTVideo[] = [];
 
-    let videos: VideoItem[] = [];
-
-    for (const rssUrl of rssEndpoints) {
-      try {
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=6`;
-        const res = await fetch(apiUrl, { signal: AbortSignal.timeout(6000) });
-        if (!res.ok) continue;
+    try {
+      const res = await fetch('/data/youtube.json', { signal: AbortSignal.timeout(3000) });
+      if (res.ok) {
         const data = await res.json();
-        if (data.status !== 'ok' || !data.items?.length) continue;
-
-        videos = data.items.slice(0, 6).map((item: any): VideoItem => ({
-          title: item.title,
-          link: item.link,
-          thumbnail: item.thumbnail || item.enclosure?.link || '',
-          pubDate: item.pubDate,
-        }));
-        break;
-      } catch (_) { continue; }
-    }
+        if (data.videos?.length > 0) {
+          videos = data.videos;
+        }
+      }
+    } catch (_) {}
 
     if (videos.length === 0) {
       if (recentList) recentList.innerHTML = '';
       return;
     }
 
-    // Update main embed to latest video
-    const firstId = extractVideoId(videos[0].link);
-    if (firstId && mainIframe) {
-      mainIframe.src = `https://www.youtube.com/embed/${firstId}?rel=0&modestbranding=1`;
+    if (videos[0].id && mainIframe) {
+      mainIframe.src = `https://www.youtube.com/embed/${videos[0].id}?rel=0&modestbranding=1`;
     }
 
-    // Build recent video list
     if (recentList) {
       recentList.innerHTML = '';
       videos.slice(0, 3).forEach(video => {
-        const id = extractVideoId(video.link);
-        if (!id) return;
         const a = document.createElement('a');
-        a.href = video.link;
+        a.href = video.url;
         a.target = '_blank';
         a.rel = 'noopener';
         a.className = 'yt-recent-item';
-
-        const thumbUrl = video.thumbnail || `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
         a.innerHTML = `
-          <img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" class="yt-recent-thumb" alt="" loading="lazy" />
+          <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="yt-recent-thumb" alt="" loading="lazy" />
           <div class="yt-recent-info">
             <div class="yt-recent-title">${video.title}</div>
-            <div class="yt-recent-date">${formatDate(video.pubDate)}</div>
+            <div class="yt-recent-date">${formatDate(video.publishedAt)}</div>
           </div>
           <div class="yt-recent-play">▶</div>
         `;
-
-        // Click to change main embed
         a.addEventListener('click', (e) => {
           e.preventDefault();
           if (mainIframe) {
-            mainIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+            mainIframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`;
           }
           document.querySelectorAll('.yt-recent-item').forEach(el => el.classList.remove('active'));
           a.classList.add('active');
         });
-
         recentList.appendChild(a);
       });
     }
 
-    // Build thumbnail row
     if (thumbsRow) {
       thumbsRow.innerHTML = '';
       videos.slice(0, 3).forEach(video => {
-        const id = extractVideoId(video.link);
-        if (!id) return;
         const div = document.createElement('div');
         div.className = 'yt-thumb-item';
         div.innerHTML = `
-          <img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" class="yt-thumb-img" alt="" loading="lazy" />
+          <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" class="yt-thumb-img" alt="" loading="lazy" />
           <div class="yt-thumb-overlay"><div class="yt-thumb-play">▶</div></div>
         `;
         div.addEventListener('click', () => {
           if (mainIframe) {
-            mainIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+            mainIframe.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1`;
           }
         });
         thumbsRow.appendChild(div);

@@ -20,13 +20,16 @@ python --version
 # 2. ffmpeg (ffmpeg.org → download → extrair → adicionar ao PATH do Windows)
 ffmpeg -version
 
-# 3. Whisper (transcrição de áudio, grátis, local)
-pip install faster-whisper
+# 3. requests (para chamar a Groq API de transcrição)
+pip install requests
 ```
+
+Transcrição é via Groq API (não Whisper local — ver Etapa 1). Precisa da
+`GROQ_API_KEY` no arquivo `marketing/automacoes/cortai/.env`.
 
 Verificar se tudo funciona:
 ```bash
-python --version && ffmpeg -version && python -c "from faster_whisper import WhisperModel; print('ok')"
+python --version && ffmpeg -version && python -c "import requests; print('ok')"
 ```
 
 ---
@@ -45,30 +48,26 @@ Para upload no YouTube: além da API Key (já configurada, serve pra leitura), �
 
 ## Fluxo completo
 
-### Etapa 1 — Transcrição
+### Etapa 1 — Transcrição (via Groq API, não Whisper local)
 
 ```
-Entrada: pasta com vídeos (ex: marketing/videos/episodios/)
-         ├── ep01-donos-da-bola-2026-06-10.mp4
-         ├── ep02-donos-da-bola-2026-06-12.mp4
-         └── ep03-american-zone-2026-06-15.mp4
+Entrada: vídeos na pasta marketing/automacoes/cortai/to cut/
+         └── DDB 2806 BET.mp4
 ```
 
-O Claude roda o Whisper em cada vídeo:
-```bash
-# faster-whisper: transcreve com timestamps por segmento
-# Modelo "medium" = melhor custo-benefício qualidade/velocidade em português
-# ~5-15 min por 30 min de vídeo (CPU) / ~1-3 min (GPU)
-python -c "
-from faster_whisper import WhisperModel
-model = WhisperModel('medium', device='cpu', compute_type='int8')
-segments, info = model.transcribe('video.mp4', language='pt')
-for s in segments:
-    print(f'[{s.start:.1f} → {s.end:.1f}] {s.text}')
-"
-```
+**Transcrição é feita na Groq API, não no Whisper local.** O CPU do Thiago
+(4 núcleos, sem GPU) não aguenta o faster-whisper `medium` — rodava a ~5x o
+tempo real (1h+ por 12 min de áudio) e travava. A Groq roda o mesmo modelo
+open-source (`whisper-large-v3`) na nuvem, de graça (free tier, sem cartão):
+transcreveu 29 min de áudio em ~17s.
 
-Saída: arquivo `.txt` com transcrição timestamped por vídeo.
+Fluxo (script `transcrever_groq.py`):
+1. ffmpeg extrai o áudio e comprime pra mp3 mono 64k (cabe no limite de 25MB do free tier)
+2. POST pra `https://api.groq.com/openai/v1/audio/transcriptions`
+   (model `whisper-large-v3`, language `pt`, response_format `verbose_json`)
+3. A `GROQ_API_KEY` fica em `marketing/automacoes/cortai/.env` (gitignored)
+
+Saída: `.txt` timestamped em `transcricoes/`.
 
 ---
 
@@ -162,9 +161,16 @@ ffmpeg -ss 03:25 -i input.mp4 -frames:v 1 -q:v 2 \
 
 ---
 
-### Etapa 5 — Thumbnails sugeridas
+### Etapa 5 — Thumbnails sugeridas (em formato de PROMPT para IA)
 
-Para cada clipe, o Claude gera uma **especificação visual de thumbnail**:
+Para cada clipe, o Claude gera um **prompt pronto para IA de imagem** (não uma
+spec manual). O Thiago gera a thumb numa IA enviando o prompt + uma arte de
+referência do rosto do Caio, para a IA basear a expressão facial.
+Ferramentas recomendadas: Nano Banana Pro (Gemini image) pela fidelidade do
+rosto a partir da referência; Ideogram quando o texto dentro da imagem é
+crítico; Canva para finalizar texto/marca. Cada prompt define cena, expressão
+desejada, texto principal/secundário (COM acentos), cores da marca e estilo
+viral esportivo. Exemplo de spec visual subjacente:
 
 ```
 📸 THUMB — corte_01_var_flamengo.mp4
@@ -185,10 +191,20 @@ Referência de estilo: thumbnail esportiva de alta performance
 sem poluição visual, máximo 5 palavras no título principal)
 ```
 
+**Formato de entrega (decidido pelo Thiago):** o Claude escreve um arquivo
+`thumbnails.txt` na pasta do vídeo, com um bloco por corte. Cada bloco traz:
+- EXPRESSÃO DESEJADA (o que o rosto do Caio deve transmitir)
+- PROMPT pronto para colar na IA de imagem (cena, texto principal/secundário
+  COM acentos, cores da marca, estilo viral, instrução de usar a arte de
+  referência do rosto enviada junto)
+
 **Como gerar a thumb:**
-- Opção 1: Thiago cria no Canva/CapCut com base na especificação
-- Opção 2: Claude gera via Canva MCP (se disponível e configurado)
-- Opção 3: Claude gera via código (PIL/Pillow — básico mas funcional)
+- O Thiago abre a IA de imagem, cola o PROMPT e anexa uma arte de referência
+  do rosto do Caio (a IA copia a expressão pedida).
+- Ferramentas recomendadas, nessa ordem:
+  1. Nano Banana Pro (Gemini image) — melhor fidelidade do rosto a partir da referência
+  2. Ideogram — quando o texto dentro da imagem precisa sair perfeito
+  3. Canva — para finalizar texto/marca por cima
 
 **Pareamento automático:**
 O arquivo da thumb DEVE ter o mesmo nome do vídeo:
@@ -231,11 +247,18 @@ Legenda: "VAR ROUBOU O FLAMENGO? 😤🔥 #var #flamengo #futebol
 #palmeiras #osdonosdabola #esporte #viral #fy"
 ```
 
-Critérios dos títulos:
-- YouTube: keyword principal no início, complemento com contexto, máx 60 chars
-- Shorts/Reels/TikTok: gancho emocional, emojis estratégicos, hashtags relevantes
-- Sempre incluir nome do programa (SEO) e nome do Caio (marca pessoal)
-- Perguntas retóricas e provocações geram mais cliques e comentários
+Critérios (padrões decididos pelo Thiago):
+- TÍTULOS: clickbait honesto — provocam o clique (pergunta retórica, tensão,
+  número, "polêmica") SEM mentir sobre o conteúdo do corte. Keyword principal
+  no início, nome do programa e do Caio quando couber.
+- DESCRIÇÕES: longas e ricas em palavras-chave. O Thiago acredita no SEO do
+  YouTube — quanto maior e com mais keywords relevantes, melhor. Incluir
+  seção de PALAVRAS-CHAVE e bloco de HASHTAGS no fim.
+- ACENTUAÇÃO obrigatória em TUDO (títulos, descrições, hashtags, legendas).
+  Nunca entregar texto sem acento. Ver feedback_acentos na memória.
+- Shorts/Reels/TikTok: gancho emocional, emojis estratégicos, hashtags relevantes.
+- Saída: arquivo `titulos_descricoes.txt` na pasta do vídeo, um bloco por corte,
+  com o vídeo de origem no topo (pra identificar a origem no upload/agendamento).
 
 ---
 
@@ -264,29 +287,27 @@ Confirma links dos vídeos publicados no Telegram
 
 ## Estrutura de pastas (gerada automaticamente)
 
+A saída é organizada **por vídeo de origem**. Como no futuro serão 5-6 vídeos
+longos gerando dezenas de cortes, cada corte fica numa subpasta com o nome do
+vídeo de onde veio — assim dá pra rastrear a origem na hora do upload/agendamento.
+
 ```
-pasta-escolhida/
-├── originais/
-│   ├── ep01-donos-da-bola-2026-06-10.mp4
-│   ├── ep02-donos-da-bola-2026-06-12.mp4
-│   └── ep03-american-zone-2026-06-15.mp4
-├── transcricoes/
-│   ├── ep01-donos-da-bola-2026-06-10.txt
-│   ├── ep02-donos-da-bola-2026-06-12.txt
-│   └── ep03-american-zone-2026-06-15.txt
-├── cortes/
-│   ├── corte_01_var_flamengo.mp4
-│   ├── corte_01_var_flamengo.jpg          ← thumb pareada
-│   ├── corte_01_var_flamengo_metadata.txt ← título/descrição/tags
-│   ├── corte_02_convocacao.mp4
-│   ├── corte_02_convocacao.jpg
-│   └── ...
-├── frames/                                ← previews extraídos
-│   ├── ep01_03m25s.jpg
-│   ├── ep01_14m30s.jpg
-│   └── ...
-└── mapa_de_cortes.md                      ← resumo geral gerado pelo Claude
+marketing/automacoes/cortai/
+├── to cut/                                 ← vídeos longos a processar
+│   └── DDB 2806 BET.mp4
+├── transcricoes/                           ← .txt timestamped (gitignored o .mp3)
+│   └── DDB 2806 BET_<timestamp>.txt
+└── cutted/
+    └── DDB 2806 BET/                        ← subpasta = nome do vídeo de origem
+        ├── corte_01_paysandu_ferroviaria.mp4
+        ├── corte_02_csa_futebol_alagoano.mp4
+        ├── ...
+        ├── titulos_descricoes.txt          ← 1 bloco por corte (com vídeo de origem no topo)
+        └── thumbnails.txt                  ← prompts de IA, 1 bloco por corte
 ```
+
+As thumbs geradas na IA voltam pra essa mesma pasta, com o mesmo nome do corte
+(`corte_01_paysandu_ferroviaria.jpg`), pra pareamento automático no upload.
 
 ---
 
@@ -305,8 +326,9 @@ pasta-escolhida/
 
 ## Notas operacionais
 
-- Vídeos de 30 min levam ~5-15 min pra transcrever (CPU). Se tiver GPU NVIDIA, muda o device pra `cuda` e cai pra ~1-3 min.
-- Cortes com ffmpeg são rápidos (~2-5s por clipe).
+- Transcrição via Groq é quase instantânea (~17s pra 29 min de áudio). O gargalo não é mais essa etapa.
+- Cortes com ffmpeg neste CPU rodam a ~2x o tempo real mesmo com preset veryfast (ex.: 14 min de cortes levaram ~24 min). É CPU-bound, normal. Acompanhar pelo Zoião.
+- Acompanhamento: o Zoião (painel flutuante local em `marketing/automacoes/painel/`) mostra progresso em tempo real. Não consome tokens — é 100% local.
 - Sempre apresentar o mapa de cortes pro Thiago ANTES de executar — nunca cortar sem aprovação.
 - Se o vídeo não tiver o Caio falando (só imagem de jogo), avisar que a análise será limitada (baseada só em frames, não em transcript).
-- Thumbs: se Thiago não gerar manualmente, perguntar se quer que o Claude tente gerar via Canva MCP ou PIL básico.
+- Thumbs: o Claude entrega PROMPTS de IA (`thumbnails.txt`); o Thiago gera na IA com a arte de referência do rosto. Ver Etapa 5.

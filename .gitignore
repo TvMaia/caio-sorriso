@@ -1,0 +1,26 @@
+# Credenciais — nunca commitar
+client_secret.json
+client_secret_*.json
+token.json
+*.token.json
+.env
+*.env
+
+# Runtime da janelinha de acompanhamento
+.runtime/
+marketing/automacoes/**/transcricoes/*.mp3
+marketing/automacoes/**/transcricoes/*.wav
+
+# Node
+node_modules/
+
+# Build
+dist/
+.astro/
+
+# Vite cache
+node_modules/.vite/
+
+# OS
+.DS_Store
+Thumbs.db

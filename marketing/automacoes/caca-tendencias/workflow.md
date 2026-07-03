@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Encontrar temas esportivos com potencial de VIRALIZAÇÃO — não qualquer notícia. O foco é: o que pode explodir em views se o Caio gravar uma opinião de 15-30s sobre isso? Pensar como algoritmo: volume de busca, polêmica, timing, potencial de comentário e compartilhamento.
+Encontrar temas de **futebol** com potencial de VIRALIZAÇÃO — não qualquer notícia. Futebol é o foco principal. Outros esportes (NBA, NFL, Copa) só entram se estiverem explodindo em trending e tiverem ângulo de opinião muito forte. O foco é: o que pode explodir em views se o Caio gravar uma opinião de 15-30s sobre isso? Pensar como algoritmo: volume de busca, polêmica, timing, potencial de comentário e compartilhamento.
 
 ---
 
@@ -27,8 +27,8 @@ Todas as credenciais (Telegram bot token, chat ID, YouTube API Key, etc.) estão
    - WebSearch: buscar os trending topics de esportes no X/Twitter Brasil
    - Indicador-chave de viralização social em tempo real
 
-3. **Google News RSS — Esportes BR**
-   - URL: `https://news.google.com/rss/search?q=futebol+OR+Copa+do+Mundo+OR+NBA+OR+NFL&hl=pt-BR&gl=BR&ceid=BR:pt-419`
+3. **Google News RSS — Futebol BR**
+   - URL: `https://news.google.com/rss/search?q=futebol+OR+Brasileirão+OR+Copa+do+Mundo+OR+seleção+brasileira+OR+Flamengo+OR+Palmeiras+OR+Corinthians&hl=pt-BR&gl=BR&ceid=BR:pt-419`
    - Filtro: últimas 24h
 
 4. **ge.globo RSS**
@@ -81,37 +81,127 @@ Não é uma lista de notícias. É uma curadoria de oportunidades de conteúdo v
 
 ## Output: não é lista de notícias — são PAUTAS
 
-Para cada tema selecionado (top 3-5), entregar:
+### Como usar este arquivo nas Rotinas do Claude.ai
+
+Nas instruções da rotina, basta referenciar este arquivo:
 
 ```
-🏆 CAÇA-TENDÊNCIAS — [DATA HOJE]
+Leia e siga exatamente o workflow em:
+https://github.com/TvMaia/caio-sorriso/blob/main/marketing/automacoes/caca-tendencias/workflow.md
 
-1️⃣ [TEMA]
-📊 Volume: [Google Trends / X Trending / YouTube Trending — de onde veio o sinal]
-🎯 Ângulo viral: [qual opinião forte o Caio pode dar — ex: "concordar/discordar de X", "provocar torcida do Y"]
-🗣️ Gancho: [frase de abertura sugerida pro vídeo — 1 linha, direta, polêmica]
-🔗 [link de referência]
+Credenciais necessárias (não estão no repositório):
+- Telegram Bot Token: [TOKEN]
+- Telegram Chat ID: [CHAT_ID]
+```
 
-2️⃣ [TEMA]
-📊 Volume: [fonte do sinal]
-🎯 Ângulo viral: [sugestão de posicionamento]
-🗣️ Gancho: [frase de abertura]
-🔗 [link]
-
-3️⃣ [TEMA]
-📊 Volume: [fonte]
-🎯 Ângulo viral: [sugestão]
-🗣️ Gancho: [frase]
-🔗 [link]
+Assim o prompt da rotina fica curto e as regras ficam todas aqui, versionadas no repositório. Qualquer ajuste no workflow vale automaticamente na próxima execução da rotina.
 
 ---
-💬 Mensagem pronta pro grupo do Caio (copiar e colar):
-"Caio, [tema 1] tá explodindo agora. Manda um vídeo de 15-20s falando o que você acha — pode ser rápido, sem roteiro. [link de referência]"
 
-📝 Títulos sugeridos pro post (SEO + viral):
-Instagram: [título + hashtags relevantes]
-TikTok: [título curto, gancho nos primeiros 3 seg]
-YouTube Shorts: [título com keyword principal + curiosidade]
+### Princípios do texto
+
+O relatório vai pro Telegram e precisa ser lido por duas pessoas:
+- **Thiago** (gestor de marketing — quer entender o potencial viral e tomar decisão rápida)
+- **Caio Sorriso** (apresentador leigo em digital — precisa entender o que está acontecendo, por que é relevante pra ele, e se inspirar pra gravar)
+
+**Regras de escrita:**
+- Linguagem simples, direta, como conversa de WhatsApp — sem jargão de marketing
+- Parágrafos curtos, uma ideia por linha, respiração entre os blocos
+- Explicar o PORQUÊ de cada sugestão — não basta dizer "está em alta", tem que dizer o que está acontecendo e por que o Caio tem algo a dizer sobre isso
+- Tom animado mas objetivo — não exagerar em emojis, usar só os estruturais
+- O Caio precisa sair da leitura com vontade de gravar — a mensagem tem que inspirar ação
+
+**Regras da frase de abertura (Como gravar):**
+A frase sugerida precisa ser um gancho de stop scrolling — alguém rolando o feed para tudo pra ouvir. Não pode ser genérica. Critérios obrigatórios:
+- Começa com provocação, pergunta polêmica ou afirmação surpreendente — nunca com "Olá" ou apresentação
+- Máximo 10 palavras — o algoritmo decide nos primeiros 2 segundos
+- Gera curiosidade ou discordância imediata — o espectador precisa querer saber o que vem depois
+- Tom de quem sabe o que está falando, não de locutor — natural, como papo de bar
+- Exemplos do que funciona: "Isso foi roubo e todo mundo sabe." / "Esse cara não merecia estar na seleção." / "Sabe por que o Brasil vai perder? Eu sei."
+- Exemplos do que NÃO funciona: "Hoje vou falar sobre..." / "Pessoal, temos novidades..." / "Então, o que aconteceu foi..."
+
+### Formato da mensagem (copiar exato)
+
+```
+🏆 *TENDÊNCIAS DO DIA — [DATA]*
+
+Oi Caio! Aqui estão os temas que estão bombando no futebol hoje e que você pode aproveitar pra gravar um vídeo rápido.
+
+━━━━━━━━━━━━━━━
+
+1️⃣ *[NOME DO TEMA EM CAIXA ALTA]*
+
+O que está acontecendo:
+[2-3 linhas explicando o fato de forma simples, como se estivesse contando pra um amigo. Sem termos técnicos.]
+
+Por que está bombando:
+[1-2 linhas — de onde veio o sinal: X/Twitter, Google Trends, ge.globo, YouTube. Quantas pessoas estão falando sobre isso.]
+
+Por que é pra você:
+[1-2 linhas — qual é o ângulo único que o Caio tem pra dar. Por que a opinião DELE importa nesse tema específico. O que ele sabe ou viveu que outros não sabem.]
+
+Como gravar (15-30 segundos, vertical):
+"[Frase de abertura stop scrolling — máx 10 palavras, provoca ou surpreende, nunca começa com apresentação]"
+
+CTA sugerido (falar no final do vídeo):
+"[Frase curta que pede ação — ex: 'Comenta aqui o que você acha.' / 'Segue pra mais análises assim.' / 'Manda pra aquele amigo que discorda de você.']"
+
+🔗 [link da notícia de referência]
+
+━━━━━━━━━━━━━━━
+
+2️⃣ *[NOME DO TEMA]*
+
+O que está acontecendo:
+[explicação simples]
+
+Por que está bombando:
+[fonte do sinal]
+
+Por que é pra você:
+[ângulo do Caio]
+
+Como gravar (15-30 segundos, vertical):
+"[frase de abertura stop scrolling]"
+
+CTA sugerido:
+"[frase de encerramento que gera ação]"
+
+🔗 [link]
+
+━━━━━━━━━━━━━━━
+
+3️⃣ *[NOME DO TEMA]*
+
+O que está acontecendo:
+[explicação simples]
+
+Por que está bombando:
+[fonte do sinal]
+
+Por que é pra você:
+[ângulo do Caio]
+
+Como gravar (15-30 segundos, vertical):
+"[frase de abertura stop scrolling]"
+
+CTA sugerido:
+"[frase de encerramento que gera ação]"
+
+🔗 [link]
+
+━━━━━━━━━━━━━━━
+
+📝 *Títulos prontos pra usar no post:*
+
+Tema 1 — Instagram/Reels: [título + hashtags]
+Tema 1 — TikTok: [título curto]
+Tema 1 — YouTube Shorts: [título com keyword]
+
+━━━━━━━━━━━━━━━
+
+💡 *Dica do dia:*
+[Uma frase de contexto estratégico — ex: "Esse tema tem janela de 6h, ideal postar até o meio-dia." ou "Se gravar hoje, pega o pico da discussão antes do jogo."]
 ```
 
 ---

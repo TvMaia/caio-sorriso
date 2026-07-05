@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Copa do Mundo 2026 — Caio Sorriso</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--blue:#0099FF;--yellow:#FFB400;--green:#00C896;--red:#FF4D4D;
+--bg:#050C18;--card:#0A1628;--card-border:#12203A;
+--text:#E8EDF5;--text-dim:#7A8BA8;--text-muted:#3D506B;
+--blue-glow:rgba(0,153,255,.15);--yellow-glow:rgba(255,180,0,.12);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.stat-val{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,12,24,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;gap:4px;min-width:max-content;padding:8px 0}
+.nav a{color:var(--text-dim);text-decoration:none;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:6px;white-space:nowrap;transition:all .2s}
+.nav a:hover,.nav a.active{color:var(--blue);background:var(--blue-glow)}
+.container{max-width:720px;margin:0 auto;padding:0 16px}
+section{padding:48px 0 24px;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+section.visible{opacity:1;transform:translateY(0)}
+.hero{padding:64px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at 50% 0%,rgba(0,153,255,.08) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--yellow);background:rgba(255,180,0,.1);border:1px solid rgba(255,180,0,.2);padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-size:clamp(32px,8vw,56px);line-height:.95;color:#fff;margin-bottom:8px}
+.hero h1 span{color:var(--blue)}
+.hero-sub{font-size:14px;color:var(--text-dim);font-weight:500}
+.hero-period{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--text-dim);letter-spacing:.12em;margin-top:16px}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--blue);margin-bottom:8px}
+.section-title{font-size:clamp(24px,6vw,36px);line-height:1.1;color:#fff;margin-bottom:16px}
+.section-desc{font-size:14px;color:var(--text-dim);line-height:1.7;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:20px;margin-bottom:12px;transition:border-color .3s}
+.card:hover{border-color:rgba(0,153,255,.3)}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.stat-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:16px;text-align:center}
+.stat-val{font-size:clamp(24px,6vw,32px);color:#fff;line-height:1}
+.stat-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+.stat-card.highlight{border-color:var(--blue);background:linear-gradient(135deg,rgba(0,153,255,.08),var(--card))}
+.stat-card.highlight .stat-val{color:var(--blue)}
+.stat-card.gold{border-color:rgba(255,180,0,.3);background:linear-gradient(135deg,rgba(255,180,0,.08),var(--card))}
+.stat-card.gold .stat-val{color:var(--yellow)}
+.big-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,14vw,80px);line-height:1;background:linear-gradient(135deg,var(--blue),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.exec-summary{font-size:15px;line-height:1.8;color:var(--text);border-left:3px solid var(--blue);padding-left:20px}
+.exec-summary strong{color:var(--yellow)}
+.chart-wrap{position:relative;width:100%;margin:16px 0}
+.chart-wrap canvas{width:100%!important}
+.compare-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.compare-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:16px;text-align:center}
+.compare-card h4{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--text-dim);margin-bottom:8px;letter-spacing:.06em}
+.compare-val{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,5vw,28px);color:#fff}
+.compare-sub{font-size:11px;color:var(--text-dim);margin-top:2px}
+.compare-card.blue{border-color:rgba(0,153,255,.3);background:linear-gradient(180deg,rgba(0,153,255,.06),var(--card))}
+.compare-card.green{border-color:rgba(0,200,150,.3);background:linear-gradient(180deg,rgba(0,200,150,.06),var(--card))}
+.compare-card.gold{border-color:rgba(255,180,0,.3);background:linear-gradient(180deg,rgba(255,180,0,.06),var(--card))}
+.video-card{display:flex;gap:14px;align-items:flex-start;padding:14px;background:var(--card);border:1px solid var(--card-border);border-radius:10px;margin-bottom:8px}
+.video-rank{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--text-muted);min-width:28px;text-align:center;line-height:1}
+.video-rank.gold{color:var(--yellow)}
+.video-rank.silver{color:var(--text-dim)}
+.video-rank.bronze{color:#CD7F32}
+.video-info{flex:1;min-width:0}
+.video-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.video-meta{display:flex;gap:12px;flex-wrap:wrap}
+.video-meta span{font-size:11px;color:var(--text-dim)}
+.video-meta .views{color:var(--blue);font-weight:700}
+.video-meta .likes{color:var(--yellow)}
+.video-meta .date{color:var(--text-muted)}
+.insight{background:linear-gradient(135deg,rgba(255,180,0,.08),rgba(255,180,0,.02));border:1px solid rgba(255,180,0,.2);border-radius:10px;padding:16px;margin:16px 0;font-size:13px;color:var(--text);line-height:1.7}
+.insight-title{font-weight:700;color:var(--yellow);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.issue-card{display:flex;gap:12px;padding:14px;background:var(--card);border:1px solid var(--card-border);border-radius:10px;margin-bottom:8px;align-items:flex-start}
+.issue-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
+.issue-icon.green{background:rgba(0,200,150,.12);color:var(--green)}
+.issue-icon.blue{background:rgba(0,153,255,.12);color:var(--blue)}
+.issue-text h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px}
+.issue-text p{font-size:12px;color:var(--text-dim);line-height:1.5}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--card-border),transparent);margin:32px 0}
+.platform-badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.platform-badge.yt{background:rgba(255,0,0,.12);color:#FF4444}
+.platform-badge.ig{background:linear-gradient(135deg,rgba(225,48,108,.12),rgba(131,58,180,.12));color:#E1306C}
+.footer{text-align:center;padding:40px 16px;border-top:1px solid var(--card-border);margin-top:32px}
+.footer p{font-size:11px;color:var(--text-muted);line-height:1.8}
+.progress-row{margin-bottom:12px}
+.progress-label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.progress-label span:first-child{color:var(--text);font-weight:600}
+.progress-label span:last-child{color:var(--text-dim)}
+.progress-track{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;border-radius:4px;transition:width 1.2s ease}
+.copa-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(255,180,0,.15),rgba(0,153,255,.1));border:1px solid rgba(255,180,0,.3);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;font-weight:600;color:var(--yellow)}
+.trend-tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:4px;margin-left:8px}
+.trend-tag.up{background:rgba(0,200,150,.12);color:var(--green)}
+@media(max-width:400px){
+.stat-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+.stat-card{padding:12px}
+.compare-row{grid-template-columns:1fr 1fr;gap:8px}
+}
+@media(min-width:600px){
+.stat-grid.three{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+<a href="#resumo">Resumo</a>
+<a href="#youtube">YouTube</a>
+<a href="#top-videos">Top Vídeos</a>
+<a href="#copa">Copa 2026</a>
+<a href="#instagram">Instagram</a>
+<a href="#acoes">Próximos Passos</a>
+</div>
+</nav>
+
+<div class="container">
+
+<header class="hero" id="resumo">
+<div class="hero-badge">Relatório — Copa do Mundo 2026</div>
+<h1>Performance <span>Digital</span></h1>
+<h1 style="font-size:clamp(24px,6vw,40px);color:var(--yellow)">Caio Sorriso</h1>
+<p class="hero-sub">Apresentador — Band / RedeTV! / Copa do Mundo 2026</p>
+<p class="hero-period">Atualização: 03 de Julho de 2026</p>
+</header>
+
+<section>
+<div class="section-label">Visão Geral</div>
+<div class="section-title">Resumo Executivo</div>
+<div class="exec-summary">
+O canal do Caio Sorriso entrou em ritmo de Copa. Nos primeiros dias de julho, a produção acelerou para <strong>5 a 10 Shorts por dia</strong> cobrindo os jogos, análises táticas e polêmicas da Copa do Mundo 2026 — um volume sem precedentes no histórico do canal. O acervo total chegou a <strong>456 mil views</strong> e 1.178 vídeos publicados. No Instagram, a base de <strong>56,1 mil seguidores</strong> segue consolidada como a maior audiência social do Caio. O momento é de aproveitamento máximo: o Brasil está nas oitavas de final e cada jogo gera uma onda de buscas que o canal está surfando em tempo real.
+</div>
+
+<div style="margin-top:24px">
+<div class="stat-grid">
+<div class="stat-card highlight">
+<div class="stat-val">456K</div>
+<div class="stat-label">Views Totais YouTube</div>
+</div>
+<div class="stat-card gold">
+<div class="stat-val">2,010</div>
+<div class="stat-label">Inscritos</div>
+</div>
+<div class="stat-card">
+<div class="stat-val">56,1K</div>
+<div class="stat-label">Seguidores Instagram</div>
+</div>
+<div class="stat-card">
+<div class="stat-val">1.178</div>
+<div class="stat-label">Vídeos Publicados</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="youtube">
+<div class="platform-badge yt">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+YouTube
+</div>
+<div class="section-title">Canal em Modo Copa</div>
+<div class="section-desc">De março a junho o canal cresceu 32.000%. Em julho, com a Copa do Mundo em andamento, o ritmo de publicação acelerou ainda mais — consolidando o posicionamento do Caio como voz do futebol brasileiro nas redes.</div>
+
+<div class="copa-badge">
+Brasil nas oitavas de final — canal cobrindo ao vivo com Shorts diários
+</div>
+
+<div class="stat-grid" style="margin-bottom:20px">
+<div class="stat-card">
+<div class="stat-val" style="color:var(--text-muted)">252</div>
+<div class="stat-label">Views em Março</div>
+</div>
+<div class="stat-card">
+<div class="stat-val">82.595</div>
+<div class="stat-label">Views em Junho</div>
+</div>
+<div class="stat-card highlight" style="grid-column:span 2">
+<div class="stat-val">456.508</div>
+<div class="stat-label">Views Totais Acumulados</div>
+</div>
+</div>
+
+<div class="card">
+<div class="chart-wrap"><canvas id="chartGrowth" height="220"></canvas></div>
+</div>
+
+<div class="insight">
+<div class="insight-title">Por que o canal está crescendo agora</div>
+O formato de Shorts opinativos sobre Copa do Mundo conecta diretamente com o que o público busca no momento: reação rápida, opinião forte, em menos de 60 segundos. O Caio tem credencial real para falar sobre isso — e o algoritmo do YouTube prioriza canais que publicam conteúdo relevante com frequência. Estar postando 5-10 vídeos por dia durante os jogos da Copa é exatamente o comportamento que o YouTube recompensa.
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="top-videos">
+<div class="section-label">Desempenho</div>
+<div class="section-title">Top Vídeos do Período</div>
+<div class="section-desc">Os vídeos com melhor performance recente mostram um padrão claro: polêmica + Copa do Mundo = mais alcance.</div>
+
+<div class="video-card">
+<div class="video-rank gold">1</div>
+<div class="video-info">
+<div class="video-title">Copa do Mundo: A Sensação de 94 Revive na Seleção Brasileira! #shorts</div>
+<div class="video-meta">
+<span class="views">2.994 views</span>
+<span class="likes">33 likes</span>
+<span>5 comentários</span>
+<span class="date">28/06/2026</span>
+</div>
+</div>
+</div>
+
+<div class="video-card">
+<div class="video-rank silver">2</div>
+<div class="video-info">
+<div class="video-title">Ancelotti Choca o Brasil: Mudança Total no Intervalo! #shorts</div>
+<div class="video-meta">
+<span class="views">1.953 views</span>
+<span class="likes">43 likes</span>
+<span class="date">07/06/2026</span>
+</div>
+</div>
+</div>
+
+<div class="video-card">
+<div class="video-rank bronze">3</div>
+<div class="video-info">
+<div class="video-title">Gabigol: Gol de Cabeça, Treta e Reclamação com Torcedor! #shorts</div>
+<div class="video-meta">
+<span class="views">1.726 views</span>
+<span class="likes">15 likes</span>
+<span class="date">08/06/2026</span>
+</div>
+</div>
+</div>
+
+<div class="video-card">
+<div class="video-rank" style="color:var(--text-muted)">4</div>
+<div class="video-info">
+<div class="video-title">Gabigol Expulso Após Xingar Torcedor, Mas Deixa Vitória Pro Santos! #shorts</div>
+<div class="video-meta">
+<span class="views">1.696 views</span>
+<span class="likes">14 likes</span>
+<span class="date">06/06/2026</span>
+</div>
+</div>
+</div>
+
+<div class="video-card">
+<div class="video-rank" style="color:var(--text-muted)">5</div>
+<div class="video-info">
+<div class="video-title">Alisson vs Haaland: Quem leva a melhor nesse duelo tático? #shorts</div>
+<div class="video-meta">
+<span class="views">877 views</span>
+<span class="likes">6 likes</span>
+<span class="date">03/07/2026 — publicado hoje</span>
+</div>
+</div>
+</div>
+
+<div class="insight">
+<div class="insight-title">O que os top vídeos ensinam</div>
+Três padrões se repetem nos vídeos mais assistidos: <strong>(1) Copa do Mundo como tema central</strong> — os vídeos ligados à seleção ou à Copa performam melhor. <strong>(2) Polêmica ou rivalidade</strong> — Gabigol x torcedor, Ancelotti surpreendendo, gol anulado. <strong>(3) Títulos que geram curiosidade</strong> — "Mudança Total no Intervalo", "A Sensação de 94 Revive". Esses três ingredientes juntos são a receita dos vídeos com mais views.
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="copa">
+<div class="section-label">Julho 2026</div>
+<div class="section-title">A Janela da Copa</div>
+<div class="section-desc">Com o Brasil nas oitavas, o canal está no momento mais valioso do ano. Cada jogo gera uma onda de busca que dura 24-48h — e o Caio está posicionado para capturar esse tráfego.</div>
+
+<div class="compare-row">
+<div class="compare-card blue">
+<h4>Vídeos Publicados</h4>
+<div class="compare-val">10+</div>
+<div class="compare-sub">nos últimos 2 dias</div>
+</div>
+<div class="compare-card gold">
+<h4>Tempo Médio</h4>
+<div class="compare-val">Shorts</div>
+<div class="compare-sub">formato dominante</div>
+</div>
+</div>
+
+<div class="card">
+<p style="font-size:13px;color:var(--text-dim);line-height:1.7;margin-bottom:12px">Temas em alta no canal nos últimos dias:</p>
+<div class="progress-row">
+<div class="progress-label"><span>Brasil x Noruega (Haaland / Ancelotti)</span><span>Sinal forte</span></div>
+<div class="progress-track"><div class="progress-fill" style="width:90%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>
+</div>
+<div class="progress-row">
+<div class="progress-label"><span>Copa do Mundo e Seleção Brasileira</span><span>Sinal forte</span></div>
+<div class="progress-track"><div class="progress-fill" style="width:85%;background:linear-gradient(90deg,var(--blue),var(--green))"></div></div>
+</div>
+<div class="progress-row">
+<div class="progress-label"><span>Neymar / Vini Jr / debate da camisa 10</span><span>Engajamento alto</span></div>
+<div class="progress-track"><div class="progress-fill" style="width:72%;background:linear-gradient(90deg,var(--yellow),var(--blue))"></div></div>
+</div>
+<div class="progress-row">
+<div class="progress-label"><span>CR7 / Polêmicas internacionais</span><span>Alcance variável</span></div>
+<div class="progress-track"><div class="progress-fill" style="width:55%;background:linear-gradient(90deg,var(--text-muted),var(--text-dim))"></div></div>
+</div>
+</div>
+
+<div class="insight">
+<div class="insight-title">Janela de oportunidade — próximos dias</div>
+O jogo Brasil x Noruega (com Haaland) é o maior gatilho de busca da rodada. Vídeos publicados nas 6h antes do jogo e nas 2h depois capturam o pico de interesse. O canal já está cobrindo o tema — manter o ritmo e priorizar títulos com "Brasil", "Haaland" e "Copa" garante o melhor posicionamento no algoritmo durante o jogo.
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="instagram">
+<div class="platform-badge ig">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+Instagram
+</div>
+<div class="section-title">Base Consolidada</div>
+<div class="section-desc">Com 56,1 mil seguidores, o Instagram é a maior base social do Caio — e o canal que mais converte em presença de marca para parceiros e patrocinadores.</div>
+
+<div class="stat-grid">
+<div class="stat-card highlight">
+<div class="stat-val">56,1K</div>
+<div class="stat-label">Seguidores</div>
+</div>
+<div class="stat-card">
+<div class="stat-val">344K</div>
+<div class="stat-label">Views no Trimestre</div>
+</div>
+<div class="stat-card gold" style="grid-column:span 2">
+<div class="stat-val">92,8%</div>
+<div class="stat-label">Público Novo Alcançado</div>
+</div>
+</div>
+
+<div class="insight">
+<div class="insight-title">O que os números do Instagram significam</div>
+344 mil visualizações com 92,8% de público novo é um dado poderoso para apresentar a marcas: significa que o conteúdo do Caio está sendo descoberto por pessoas que ainda não o seguem, ampliando o alcance orgânico muito além da base de seguidores. Para um perfil de 56 mil, esse número de alcance é proporcionalmente alto — sinal de que o conteúdo tem potencial viral consistente.
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="acoes">
+<div class="section-label">Estratégia</div>
+<div class="section-title">Próximos Passos</div>
+
+<div class="issue-card">
+<div class="issue-icon green">1</div>
+<div class="issue-text">
+<h4>Manter ritmo de Shorts durante os jogos do Brasil</h4>
+<p>Publicar antes, durante e depois de cada jogo garante capturar o pico de busca. O jogo contra a Noruega é a maior oportunidade da semana.</p>
+</div>
+</div>
+
+<div class="issue-card">
+<div class="issue-icon green">2</div>
+<div class="issue-text">
+<h4>Priorizar títulos com keywords de busca ativa</h4>
+<p>"Haaland", "Brasil x Noruega", "Ancelotti Copa" e "Vini Jr Copa" estão em alta. Incluir essas palavras no início do título aumenta o alcance orgânico.</p>
+</div>
+</div>
+
+<div class="issue-card">
+<div class="issue-icon green">3</div>
+<div class="issue-text">
+<h4>Aproveitar credencial de imprensa para conteúdo exclusivo</h4>
+<p>Bastidores, zona mista e acesso ao campo são diferenciais que nenhum criador de conteúdo comum tem. Um vídeo "de dentro" vale mais do que 10 análises remotas.</p>
+</div>
+</div>
+
+<div class="issue-card">
+<div class="issue-icon blue">4</div>
+<div class="issue-text">
+<h4>Replicar os Shorts mais assistidos no Instagram Reels</h4>
+<p>Os top vídeos do YouTube (Copa de 94, Ancelotti, Gabigol) devem ser publicados como Reels no Instagram — a base de 56k já garante um alcance inicial sólido.</p>
+</div>
+</div>
+
+<div class="issue-card">
+<div class="issue-icon blue">5</div>
+<div class="issue-text">
+<h4>Converter a audiência da Copa em seguidores fixos</h4>
+<p>O pico de Copa traz público temporário. O CTA em todo vídeo ("segue pra acompanhar o Brasil") é o que transforma esse tráfego em inscritos permanentes no canal.</p>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<p>Relatório gerado em 03 de julho de 2026<br>
+Dados: YouTube Data API v3 · Instagram (último período disponível)<br>
+Caio Sorriso — Apresentador Band / RedeTV! / Copa do Mundo 2026</p>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('section').forEach(s=>{
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  },{threshold:.1});
+  obs.observe(s);
+});
+
+const navLinks=document.querySelectorAll('.nav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  document.querySelectorAll('section,[id]').forEach(s=>{
+    if(s.getBoundingClientRect().top<100)current=s.id;
+  });
+  navLinks.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+  });
+});
+
+const ctx=document.getElementById('chartGrowth');
+if(ctx){
+  new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels:['Mar','Abr','Mai','Jun','Jul (inicio)'],
+      datasets:[{
+        label:'Views mensais estimados',
+        data:[252,890,3200,82595,15000],
+        backgroundColor:['rgba(0,153,255,.3)','rgba(0,153,255,.4)','rgba(0,153,255,.5)','rgba(0,200,150,.6)','rgba(255,180,0,.6)'],
+        borderColor:['#0099FF','#0099FF','#0099FF','#00C896','#FFB400'],
+        borderWidth:1,
+        borderRadius:4,
+      }]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>''+ctx.parsed.y.toLocaleString('pt-BR')+' views'}}},
+      scales:{
+        y:{grid:{color:'rgba(255,255,255,.05)'},ticks:{color:'#7A8BA8',font:{size:11},callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v}},
+        x:{grid:{display:false},ticks:{color:'#7A8BA8',font:{size:11}}}
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>

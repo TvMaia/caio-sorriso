@@ -89,9 +89,8 @@ Nas instruções da rotina, basta referenciar este arquivo:
 Leia e siga exatamente o workflow em:
 https://github.com/TvMaia/caio-sorriso/blob/main/marketing/automacoes/caca-tendencias/workflow.md
 
-Credenciais necessárias (não estão no repositório):
-- Telegram Bot Token: [TOKEN]
-- Telegram Chat ID: [CHAT_ID]
+Não há credenciais necessárias. Ao finalizar, gere o resultado como arquivo TXT
+com o nome tendencias-[DATA].txt — o conteúdo chegará na notificação da rotina.
 ```
 
 Assim o prompt da rotina fica curto e as regras ficam todas aqui, versionadas no repositório. Qualquer ajuste no workflow vale automaticamente na próxima execução da rotina.
@@ -100,16 +99,17 @@ Assim o prompt da rotina fica curto e as regras ficam todas aqui, versionadas no
 
 ### Princípios do texto
 
-O relatório vai pro Telegram e precisa ser lido por duas pessoas:
+O resultado é gerado como **arquivo TXT** e entregue via notificação da rotina. Thiago copia e encaminha para o Caio e para os redatores da equipe. O texto precisa ser lido por:
 - **Thiago** (gestor de marketing — quer entender o potencial viral e tomar decisão rápida)
-- **Caio Sorriso** (apresentador leigo em digital — precisa entender o que está acontecendo, por que é relevante pra ele, e se inspirar pra gravar)
+- **Caio Sorriso** (apresentador — precisa entender o que está acontecendo, por que é relevante pra ele, e se inspirar pra gravar)
+- **Redatores da equipe** (precisam de contexto suficiente pra desenvolver o conteúdo sem depender do Caio)
 
 **Regras de escrita:**
 - Linguagem simples, direta, como conversa de WhatsApp — sem jargão de marketing
 - Parágrafos curtos, uma ideia por linha, respiração entre os blocos
 - Explicar o PORQUÊ de cada sugestão — não basta dizer "está em alta", tem que dizer o que está acontecendo e por que o Caio tem algo a dizer sobre isso
 - Tom animado mas objetivo — não exagerar em emojis, usar só os estruturais
-- O Caio precisa sair da leitura com vontade de gravar — a mensagem tem que inspirar ação
+- O Caio e a equipe precisam sair da leitura com vontade de agir — a mensagem tem que inspirar ação
 
 **Regras da frase de abertura (Como gravar):**
 A frase sugerida precisa ser um gancho de stop scrolling — alguém rolando o feed para tudo pra ouvir. Não pode ser genérica. Critérios obrigatórios:
@@ -120,12 +120,14 @@ A frase sugerida precisa ser um gancho de stop scrolling — alguém rolando o f
 - Exemplos do que funciona: "Isso foi roubo e todo mundo sabe." / "Esse cara não merecia estar na seleção." / "Sabe por que o Brasil vai perder? Eu sei."
 - Exemplos do que NÃO funciona: "Hoje vou falar sobre..." / "Pessoal, temos novidades..." / "Então, o que aconteceu foi..."
 
-### Formato da mensagem (copiar exato)
+### Formato do arquivo TXT (estrutura exata)
+
+O arquivo deve se chamar `tendencias-[AAAA-MM-DD].txt` e ter o seguinte conteúdo:
 
 ```
-🏆 *TENDÊNCIAS DO DIA — [DATA]*
+🏆 TENDÊNCIAS DO DIA — [DATA]
 
-Oi Caio! Aqui estão os temas que estão bombando no futebol hoje e que você pode aproveitar pra gravar um vídeo rápido.
+Caio e equipe, aqui estão os temas que estão bombando no futebol hoje. Cada um vem com sugestão de como gravar e o que falar — é só escolher e partir pra ação.
 
 ━━━━━━━━━━━━━━━
 
@@ -206,14 +208,9 @@ Tema 1 — YouTube Shorts: [título com keyword]
 
 ---
 
-## Como enviar no Telegram
+## Entrega do resultado
 
-```bash
-curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-  -d "chat_id=${TELEGRAM_CHAT_ID}" \
-  -d "text=${MENSAGEM}" \
-  -d "parse_mode=HTML"
-```
+Ao finalizar a análise, **gerar um arquivo TXT** com o nome `tendencias-[AAAA-MM-DD].txt` contendo o relatório completo no formato acima. Não enviar por Telegram. O arquivo aparece na notificação da rotina — Thiago copia e encaminha para o Caio e redatores.
 
 ---
 

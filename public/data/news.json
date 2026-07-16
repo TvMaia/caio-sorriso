@@ -1,6 +1,16 @@
 {
-  "updated": "2026-07-15T16:22:15.781Z",
+  "updated": "2026-07-16T16:17:09.238Z",
   "headlines": [
+    {
+      "emoji": "⚽",
+      "text": "Jogos do Brasil na Copa elevaram em 21,3% vendas do varejo alimentar, diz pesquisa - Valor Econômico",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPR05iRnIzZVpaZGx3ckl0OTNSdDB5dXVndTlSVFVSNllydk1DUnpjQlIzQ254VXJzV1BqeHNsRTJrNXZhTHhNS1hOc2ZROXF0NlZmT3dnQTlaVGp2OV9nVTdaLVRpMWlZbGU4M2U1dllvZzdEZnFQd3ltM09HZnBmanBfRTVPNXVXRmItdTJMckNLOVFGV2xTVFpGNDh0VEgxQmc2T1hzaGpYNmo0ekFmOFNzQmxhNk5OUkF6emZ0NHZza1NDOG43Z3AzaGRKOHFTb3pkbVU0LVlTZ0dS0gHrAUFVX3lxTE9rNkgzVW1QR2VzeVBNczVNSlNtbXhjZE5xQ0Z3dGNkcGdRd3QzRTFjQVd0TW14c1hSOUdOdlM3U183Y2d1X1F6UzR3SkNXRVRZZ0thSkJEYlFBSkxwcGhKTFFkeHBrSERvZ29tMGR2YVBrQTZxMHR2MHdJVFVzYngwSDUzNTFaaDBuSUliZGlOZUJ3ZEszSzluYzhfUTVZNVhmUkdVRER2X01fWlB6aTFxY2V4ZXdDZ2M0NWFqRG42T0FlN3hGU3MwcVVzbDlZV3RKWEV5QVBFb0RlVXJVSFlJb3hoZW14YWhzQTQ?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Flamengo tem retorno de trio da Seleção Brasileira - LANCE!",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX21DS2RTcktWb0stWGswa0oyMGs1N3QyT1pOeTlTZExjRUdqTmdVWjRFaTNqbjllRnJNVjlnWTBLVFE2a0Rmd1puTEZJUjlGNTRobTFOWU81V1Z5NnZCZDB5Q29wY2hlLS1tRThBTmVWSnprNVg3X083dUh3eTctZjZMbGl6Qk9UY0VmSERkRHo0bGc?oc=5"
+    },
     {
       "emoji": "⚽",
       "text": "CBF define metas para novo ciclo da Seleção Brasileira; saiba detalhes - CNN Brasil",
@@ -8,73 +18,63 @@
     },
     {
       "emoji": "⚽",
-      "text": "CBF traça objetivos da Seleção até 2030: vencer a Copa América e as Eliminatórias - GE",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNRENFN3VRakw0cnhDdUpnWVZ1UERReHZWTGpSdGl0OGZXckVQT2lYZktwUmxXdXcwUVp1NW9IbTFPeWlDVkRCenRNQjE0czZsUFRvZEJmMXl0Ylo5bWctRGJrbjYwYkZtaEprblVTVWNKSGlpVzZMTzlpUkI1VkRDblVxNV9fajNxRkZkaDZxYno2YnhsV3NhQ1pZWm5yOUktLVFCMFJYM0VzTXNfeF9NNjNBTTl0RW5zUHJWa0VLNVdFck5YM1FEU1pMeDdreHJaNHdETzNEbmFhZ3JpcFhoVXVxM2tqeFl1NkhaLWdhNEVNSV82eUFR0gGGAkFVX3lxTE5qTkRxS201OGF0SWZ0cWZveVVjdkt2NmtpRlFxMDhDaFE0YlF3MFI0SHZfVDUyaXA3anA2LTdQUHdFYmVIdGZPUUNUc0MyWVE5TmJoUGZsajBnTGdNbDV5SW1rVEJXVkpBUUJkNTVZOXR4ZWtGTVBiZ1BvVTg4T3FWNTJCWGs5cXZ2NVRqRklaZml1LXdmTm5PSjJjckdwc2RWVm5UdG1WQXRoQllWS3B6SzJqSFRqenUtYTRfQko5QkY3YWY0V3hzUDlCSkJmYkM3d1lodTZCa2xLZ3BsT2J1MEJreGtYRXUwWkNPd0NGNjVhSF9WcG1hTERuYVVhLTJtWktRMmc?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Opinião - Danichi Hausen Mizoguchi: Seleção brasileira precisa de antropofagia para retomar glórias - Folha de S.Paulo",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNlZabzh6aExiTHdTNkZ1cDZsTlNtWDUzVEdEWjdYSkRhUnhwcTZpTHdoVExJOFNhMlIwNjJnNzdPSUJFZENRT3R4ay15Y3ozeVZOVnRISzhiMklSeGxpVUctNjZaZF9mZVhKekpCS2FrckJ6RndJVXdtUDU3b3ZnXzRoNzMxRVJRanlkTnZlc1lPbVlMckpfR3JtbjB4VnRMREZCQ1RiOWpyMzJZOHNOZXpwS211azh3eUQ4Yw?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Atletas do Celeiro voltam ao Inter após defenderem a Seleção Brasileira - Sport Club Internacional",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQXZlM3o2LTY3MDlnN3hURF8xTC1FSm5zaXlJQ3N3Si1pRFNYT1hGeTF2cTg2Z1JMZGxyUjBNdVNVRTczbGhJRzhqRnhNT3VLWmZHMTVfSW81SFRNQnRUSkpEMHVHVF9ZR0tKbXVvYzktVWNMVmxUN2RBRkNmQV9qTzJqOE9LTlZCY0dLakIxRUlsM2VaRThQTndGa0toX2pCeUY5VzJhbHJXNjBSQVFVaVMzc1VHWUVwV2ZrandPMEFTM1U?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "O triângulo de ferro da mediocridade: fé, mercado e a decadência do futebol brasileiro - Brasil de Fato",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVERSYzVjUWdzSm1zbW40d1gzVjBTcUFPTm9RVERSeVpVRzFJNDU2UzBlZUJ0QWFGR1BRakFiRm5nTm1HZ2JET08tMkhSY3IzcXBFd3JEUFd6am96MUxKNUFYNi14TmVxeUNBT1RSd0pOWnBYakRYSzdXVk5lWmx0bGthT3I0cWlOYXdyUnpySkF5aGhrSVR2ejZiVi1Wc3l1WW1wTUlPZ28tOUF6X3VWanZXaHpHY1l0SlpIemNRdF9ZLVRVVm1j?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Casagrande compara seleções semifinalistas da Copa com o Brasil e dispara: 'Distante de cultura e de qualidade' - ESPN Brasil",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPUVpUOVhCdzNTX2FSdThzS28yNF91eGlJazl0eUxKUUNMb0pXS0lRLTNMWnItQXZENjhWaXZCNUVXOFhyak14VlUtdlA0TTJrR1ZYWXhvYkR6Z2UwOWhCeVJCTEpmVG5MaUI4Z3UwYmlNMktnUmZrM3RGYUhrTnh1TkdsU015R0tNa2N4eW1FWGVsMXVpMzJHRTZRcm03SlRlOVIyeVl0c1V2SlhBRlNJSXFDUWl1OU9CU3BDWG9mdm5TV0tsRmVOZjRWekNnZlh0VEY2ZDhNYUpQQzZxMlNkUzBBcW1IYlFuZmR4dA?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Futebol: veja ídolos que treinaram suas seleções - olympics.com",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5vcE56SU9EZFgyT0ZkYVpnX3g3MzhSMEpMSmVMTU5KbEY5ZlNHRWEtNW9oczdVX3R5NTA3Y2U0WWRNYUJEc3FDN3VGOHJweHhyUDl5LS1nZEV2UlVmLW1rYWZJSHBlRFZQUUdsOUZfRDJqRmZTMUFwY01R?oc=5"
-    },
-    {
-      "emoji": "🏐",
-      "text": "Seleção brasileira de vôlei masculina enfrenta a França e ainda não está classificada para a fase final da VNL - VEJA",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNRVBVMVBMLU13VHNhSk1XVjVyTGtaQ2UtQlZseXhjbTFqU2tyWHFiYWJ0M2xfV21JOHhtaXZnazNRZGNtSHVsMU14VEl2c1lRT1pUVVhOS0ZqNnhFVmxSV1RxTmhWMnBJX2NxVVFfY1ZwSjk1ZWNlOUQ1b2xRYkJCQUw2U3Q4NDJ4NjFKeVBJOTJWbUgtM0dhS05WSUh6dkNzemJwTDNycVNTLXFRVEtjNFBaRVFYQ01GY2dxcnA0SlU0ZnROc00wWlFXMmdlSkx2eU9oQkpiRjJJUlJ0eUE?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Maior que a rivalidade com o Brasil? Por que Argentina x Inglaterra é o clássico que os hermanos mais querem vencer - BBC",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBPYldpSEliQVJ2LV95T3MxVjhWRzJXa3N2Si01X3hPZzZYR1ZQSmxCQmc0RHhWemZYd1JiLXU0Y0lndGtCSENRQ3pLZWJnUnhzU2JrSFA2S2hzNm1YSlQwNy1n?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "SELEÇÃO ESTADÃO | ‘CBF fica fazendo videozinho enquanto o futebol brasileiro está cada vez mais decadente’, diz Luisão. Comentarista critica postura da Confederação Brasileira de Futebol após a Copa⁣ ⁣ 📲🇧🇷 'Seleção Estadão' rola ao vivo, todos os - instagram.com",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1sZjRaVFBqWElOYXR6SFpSM2lHOUNVNjIzQUhFRWt3Z0YyMzFvZVlYN2FwZThjMEd6emJvZ1N4OUxwclVreFhCVFI2Njg2VW5oWi1sa3B3?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Saída do Brasil da Copa pressiona Ambev no 2T26 - Safra",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE84cHZiQW1RNlJzWDlmNE5TaHRZSWFUZlRwdmJ0TG16emExOVVNM29sUE92ZTBoVHFEdkJma1lrU2RUa0dyUFEwSXZiZkh0TnZiX2IxUlZITnVyT2lXVC1jbFdmY29BUF81YXluYVFkNWgzLTFFQ3pON3JR?oc=5"
-    },
-    {
-      "emoji": "🏐",
-      "text": "Seleção brasileira enfrenta França na Liga das Nações de vôlei - Jornal do Comércio",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZnFUR3llb3JzVF94VWVkQVA4bVVoOXd5NEFjSloxRUFvU1dwc3AzRGFuTV9raElaV2F6aDV4STFkUW9GRDVvN0d2bWJJTTZDcmVYMC10OXFzTWNpT3N3RkZWcVRkdHl4b0ZwNzE0aWxlVjY0WEFUVUhvZVJFZUhBY0k3NGdrTzJrck5TLV9tTlNJSU9sNFhndWtnRXZVNkVHNE9wdWZtZTZoUkhiN243a3lBMVhSMEtqOXlEXzJ5dlcyR1U?oc=5"
+      "text": "Jovem atacante do Benfica integra seleção brasileira sub-15, mas ainda é alvo de Itália e Portugal - ESPN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQb0lIOW80X0R2cGxYNENaZnZJaTMxNWZYXzR5bFVreGlDOERkMy1aOVZvNFI2NThXaU5oa3RYeEt2aGFUWTZNOW9UX3RrSnpCNzF0dXpNT3JUczFiLUFuWlI1czlRVFVpZlhiNkNQQjRMZG1FcmU4Q1g4WlByTnNnR2U4RFNNT24zR2R6NThvU0t4WEp2cHRDb2xGaVpLU0R1VGN5ZURvdnZSQ1V2N1BMMExCeEEyVEFZeEpV?oc=5"
     },
     {
       "emoji": "🏆",
-      "text": "Brasil já foi eliminado da Copa do Mundo por um país não europeu? - jornalcruzeiro.com.br",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbE1kR2ZpMDhxQm5CYTAtU1lKQi1MRVlGMjIxN3hIWFM4UV9VcmRkTVQ1alBKaWhrZDd0NUd6cFQ5cGY1cGZGZVBvQVBFVXp2MmRyNFBkN29WNnRSYUVXQnhqSGE4WDFYalEtVlpUbERLeFBZeC1RUHowUlVNSWVIeU9JSXQyLUdsRlVrQ1RMbHBtYWJWYVB4V1ZrX1M4Y09yNWItaDRmT2VKSWtZaktz?oc=5"
+      "text": "FIFA abre credenciamento para Copa do Mundo Feminina Sub-20 2026 - CBF",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQYjVKcjRWa0FSeGdReVBwMHVWSGdWNGVUcmNCSTJtTXhnbnBHU3hQbF9ULWh5V0dsc3I0UURySjZQMW5kczMyWGRQSVJBLW9EYVZIZExvMnRmZEwwUVRrZ2xPN0cyNzlFc1BtVGcxM3E1T2phZ0xVblpHOURjYUJZdVpIMm90b0FnY09rSmd6a2tmTUczSURPbm92Zk8tVk44ai1VNUVnWDhMRlRTOFJwU3pSaVY2cHV4WWZ0RFZxODRLU1F1YWRIYWtKbGRBbFotRGMzcWIwUHFlbUR0STZn?oc=5"
     },
     {
       "emoji": "⚽",
-      "text": "Conmebol poderá confirmar competição com Seleção Brasileira nos Estados Unidos - GZH",
-      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPdDk2UWhaemJHM01fU1IzNjdOaDB2cE4taG9IdXhYclVhd0MtTm9GWHRnMFFQN0QtWkNOZTdmWWtCd1R5RGZXLW53TlBPQTh6cmQzeGdzZEhfb2NqSzZ4bk40TF8xdmJfdzNQN2tzOC02dEhPSko1Y3NxeUhoaWx0aGZFN0ZTMUVXanZOQjlCc21QYmJoSWhTb2kweDZWMG5QbVFtenJtM0ZkalhlX0E3RktMQTc2ZlZaT3JYbE4xQVVBUVJpQmlBT1ppNEgzRUtUcEluREtpWGJQdWZDWlJ0NUhjY0hJRFdIQVhLMXNaS3NNSDBTSXJkT215bmxEM1Q2a1F4QUhRQVE5WGFPSkVFcHp3?oc=5"
+      "text": "Lavieri: Loucura do Brasil impede a construção de um técnico para a seleção - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQcjF1MnFfeFctanJhS2VUMzQyV2hTZUdwNnZKdXVDUnFMZnVuenh6OEJRbXFLT3lnVklWVFRJdXh3NlRYeTlPSXVKSDB1cWVOOFJJNGdoWVAzMzRKX0pHZGNkRHNmRWFQWkZiRGN4RFlmanBLdWlQaXlOWUlPcDZPRlBoTFlCSk1GUDZHdzA5N3h3UjFzV0V6RXEwLUc4cmtuYjN3ZlNsdmtPcVVXc1VoT1Q0SHZWQUNXaVBIc2NjZmMxQWVueU9XQVpSMmlFLUNIcWpCQTc1V0RWdVVvaTA3aXpVY2xGcnY1N1E0eVNyRW43UQ?oc=5"
+    },
+    {
+      "emoji": "🏆",
+      "text": "Como foram os jogadores do Brasileirão na Copa do Mundo 2026 - olympics.com",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUUFsUHIwNm9fS2pTMGhIRXkxdW5KT1dyUzVCcUREd09lYUtSaUJQbEt1dUw4U0dLLTJDZ2syLVZ2LUg4YzVMN1Q4dWk0TnM3ZktJaXF0VnZMT1I1a1l0eUFscUFWZTVpbExQYjlXNmtzNjJfdHEya290X1ZnajVsMFUzMXNXeXJ3T19wdXpkVTVJRlhON3c?oc=5"
     },
     {
       "emoji": "⚽",
-      "text": "Análise: vídeo da CBF irrita torcida e amplia crise na Seleção Brasileira - CNN Brasil",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTFltLW1sZnowc2k0MWx6ZTY5aHZqS1U3b0xMRk50T0JjLVREY3I4VGpUWkh6WWZ2bjVNTkI0VmlQVEd2YUtxQ2w0c0pkUXhpVzFrRk80ck5VWjlVN2xMd2h1VVdiTWszR3E0MXhod19Ba2VlTEZQOWQyVjB3dDlvenpLOEU2bDYxSUNDekxRTjNQbnp0b0MtRnJ3d0lrMmpFX3FhNVF6bVN1UHlmUUx6Yldvd2VjT05tRWpxWVpyRUQ2Y245OVB2SzR0bE5HSExVQ3FsYQ?oc=5"
+      "text": "SELEÇÃO ESTADÃO | Muller: 'O futebol brasileiro está caminhando para ter a identidade da Itália'. Comentarista escolheria algum treinador brasileiro para comandar o Brasil.⁣ ⁣ 📲🇧🇷 'Seleção Estadão' rola ao vivo, todos os dias, às 10h no YouTube, no site - instagram.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0yY1d2WWZtNVY2OUdlOVp5c0E5emNjRDZQdHlxcjY3ZzdoNzNPRjNtVzQ4T2hBR1lQOE1ZWWpPM0xndHFfSzZNblFqYkMzRjlLVzNDWkln?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "OPINIÃO: Final da Copa mostra que técnico bom nem sempre é o mais caro (neste caso Ancelotti) - ESPN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNcS02cC1RZWdIZHlKbzRqd05Qalo2VnBDUXUxN3J6ay1aVHlkYkZrWFpCVFYzU1VrX3ZQdFF3YkY0ZEVKYng4eElhMUFTOFVHWE5wcS01YkF2OG5vQy1PRk5nb1hvOWo5NVFGekdvT3FFQlJoWHZPZGdhWklHR0oyRXpXNTBHZ2ZqVk9PaXpTU0tTVHhNNElCY25UQ3FtcWk2VlJTanV1VVEwZFNnSkx2TG00ay1aTnBNRHhJMHRBY2hvY0pHMlZlZ0l4b2RTWjR2eUtMNERyM3BMRV8yODd4cw?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "A camisa da seleção brasileira e a marca pessoal - O GLOBO",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNSk5xRjlVeG5KdEZyVS1LWkNIakhQSkduN3JzcFJpQVJ1V21IRDZreDVZZW9pakRzWmpTeEc4UThoN0l0U0FzLWJtRHdKblhRaVR0QzlqYnZFaGwwV2lnQWZGM1dyUExFR3FhelpiZXQ5UzUtNjFfTHBTRWVIb0ZrN29DZnRkUU54aGhJ0gGaAUFVX3lxTE5IVmdTSWhhUjdxOEpIQld4Sl9jTURxaDlIUTJ5Zm5IQ2ZMTnJKSXE5d0lBbW5UZmZ0a2tUNlJiU3RLQUgwVkduNzlzbWhtb0NoTzVhbTZiaFJNekJOTl9yNFhESm95Q0NzQV9sT2RpWmRsVDUyRjY3UWNXVHdfS0xrYjhGMXdfMHVTZVJoVXRSbFFrV1JMZ1FKaEE?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "CBF detalha crescimento do futebol feminino no Brasil antes da Copa 2027 - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQVEpaQ3d0R2JIVkNUT3VZMkkxcThZeDNCd3M4emtQLTFZbkUtRTFXVl81dUhhQm1vRTZFMmg3eHQ5UjVQeUEwWEk0MmI3U1kzSkc1NnF5QnNVT0NueDdzTkJtVUF3VnF0SDFabDVKX0I5amV0UmtBbE9NR0RrY09lZXJaNjJYX3J4MkRaYk5nUVN4T1pVNzhhc2otOGI0dGMzck45NXNNR1RFbE5BNnQ0VVVkaFlCM2tySDVBY0dPOUVUNU1yVWNPbndCNEFQdw?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Opinião - X de Sexo Por Bruna Maia: O VAR é burro e a seleção brasileira é um pinscher - UOL",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNSHRQaC1GNWJvRmtUNVNCOVRmdEFWSmZqSWpZX0NlaFJjRnVFVXBtSXhHSWUtU1FrSzh3UFpPdGdPVXM1UWtYaEVBQlpuU1NLbmFNME9CNUZXdnh2eHlpcnJNc0UyVXZzQWVPcXI1bTlrWkdjRnBDSDh1X19wdHpSNS0yQVFaMzNIR2JXWHEtMnRUY0Z0aVZ5eU9wOGZYWlZaZ0hEcjlqS0VrYWVkMnFkanBZaw?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Lula critica Seleção Brasileira após eliminação da Copa: \"Que vergonha\" - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOaXlucF9TNVEyUXBhUVpKTXFZeUNld2tGOTNOa1JzNTM4d0NvblZrcG5BekRwckJuNTV3emk0S0hYVmFZZ1RLNWUtUWRYR21PUEZsRHROTDYzX01hVWZpRWxYcDNzZkR1YzFSX1MtMmxKYzRQd2tUSFVBeTRCNVMzaWxSb3pIcVRXeVl5VklQWWQtVnp0RlFHeE5rM2xRZ09GSWt6cllOc2FBXzJLdFh3eUstVGE1VDhuM0dDTGZncVBDb3ZDTGNXejlBWGtQRXc?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Final da Copa piora trabalho de Ancelotti? Colunistas esquentam debate - UOL",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNa0RiZzVXU0lrdkZhR1VRV3hDOFFOQUdCbFJqazVzRFdpbmdsMGV1V3NqR1dEVjIzODBkeTFEb18tR0dQMDR3M1p1WWlVQUZPaG1QcjV5Y1NmLTN5Wmp1VlRSV2tERF9kZEZVWWozR3RvdkdwWk5fZjhDRFBTSjR6Qm1RWFRjSHNNZlUzRkNxbmZ1QXk4V0hfYk4wRlNjeC1CbTBfRGNTc2I5T0RkUWI1Q0J0QllKNTh6Ty0yX0xkMTlheDJ0d19aazdqUnVnak1XMmMtNHlZOWFfdmZid1h5RGdZOFZsbFhOdEZOTDFVTldxY0xoZWRfTg?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Hexacampeã mundial, seleção brasileira de futsal vai retornar ao Acre para amistoso em 2027 - ge",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQLUpWS0VYWno4OHFQOWd3MU1lNmstWjBjZW1iOEs1RlhJUEd4SkJ6akhjc0N0QlhMeFBFb2dmd1lXTXFYVHgwRG9Wb19ScHhBNGRENEhhdlNrNndYYU9tUnYzVlFoZ1gxeFFvZExpM1E2cDR6UUNFVkpFdWJmYVJPY1ItV0ljZWcxMnZheHBlSlQ1cmhtQ3RaSGExWWNLU2gzclppWFUySzRmUk5USnpMME5yZm9PLV9LYm8ybk1zUFFMaGNRa3hkZ1FFS1p2d1lfYXp2M3lR0gHkAUFVX3lxTE40TWM3bWtLNS1aYmtjZE9xdzZHVHo2MS1ZTm9WRGpnWXlZNm5xMHRMcDZOT19EM2tmbmF1aG5xV1pyaXlyYzFZelNBMWhZVE0wNnllWTBDVnBhRmJDQXVpWHBvNlNHeDBpT0NLVmozZ19GTy1GaDJOQzRjNUpoeTZJbWw4YUlNc1R5WkxCVnJ1Ri0zMW1xdWcyNlZnaFZMZFhMc0VPSjFmWGNjdlJ3SG52TEdaWm5zWjVQOXVjRm1uOHVRb0lDVk9vUFVxSUdOTGVpX2pTY3A3VHJGUVFDaHp2dmJrVA?oc=5"
     }
   ]
 }

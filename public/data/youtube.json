@@ -1,6 +1,13 @@
 {
-  "updated": "2026-07-16T16:17:11.636Z",
+  "updated": "2026-07-17T16:15:52.031Z",
   "videos": [
+    {
+      "id": "szoiNzFFV-8",
+      "title": "Acreditar no Brasil: Esperança em Tempos de Mudança #shorts",
+      "thumbnail": "https://i.ytimg.com/vi/szoiNzFFV-8/mqdefault.jpg",
+      "publishedAt": "2026-07-16T17:03:35Z",
+      "url": "https://www.youtube.com/watch?v=szoiNzFFV-8"
+    },
     {
       "id": "cynpatml8OY",
       "title": "A Frustração no Pênalti Contra a Noruega #shorts",
@@ -35,13 +42,6 @@
       "thumbnail": "https://i.ytimg.com/vi/IuUNlQMCiHw/mqdefault.jpg",
       "publishedAt": "2026-07-15T00:02:21Z",
       "url": "https://www.youtube.com/watch?v=IuUNlQMCiHw"
-    },
-    {
-      "id": "FFgPCvWjKrA",
-      "title": "Quem vai chegar na final? França ou Espanha?  #copadomundo #lamineyamal #mbappe #argentina",
-      "thumbnail": "https://i.ytimg.com/vi/FFgPCvWjKrA/mqdefault.jpg",
-      "publishedAt": "2026-07-14T19:41:42Z",
-      "url": "https://www.youtube.com/watch?v=FFgPCvWjKrA"
     }
   ]
 }

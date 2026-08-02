@@ -1,6 +1,13 @@
 {
-  "updated": "2026-08-01T16:00:17.633Z",
+  "updated": "2026-08-02T16:02:23.495Z",
   "videos": [
+    {
+      "id": "FUK6pbLq_yU",
+      "title": "Sorriso no Arrebenta",
+      "thumbnail": "https://i.ytimg.com/vi/FUK6pbLq_yU/mqdefault.jpg",
+      "publishedAt": "2026-08-02T03:03:57Z",
+      "url": "https://www.youtube.com/watch?v=FUK6pbLq_yU"
+    },
     {
       "id": "v0IG6B_ycKY",
       "title": "A torcida mais &#39;apaixonada&#39; do mundo ou a mais descontrolada? #messi #argentina #copadomundo #viral",
@@ -35,13 +42,6 @@
       "thumbnail": "https://i.ytimg.com/vi/J-e7zNA1YGw/mqdefault.jpg",
       "publishedAt": "2026-07-13T21:04:42Z",
       "url": "https://www.youtube.com/watch?v=J-e7zNA1YGw"
-    },
-    {
-      "id": "IwQ8ODMOFuk",
-      "title": "Espanha DOMINA Portugal e mira a França na Semifinal! #shorts",
-      "thumbnail": "https://i.ytimg.com/vi/IwQ8ODMOFuk/mqdefault.jpg",
-      "publishedAt": "2026-07-10T11:57:29Z",
-      "url": "https://www.youtube.com/watch?v=IwQ8ODMOFuk"
     }
   ]
 }

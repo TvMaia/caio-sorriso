@@ -17,7 +17,7 @@ const programs = [
   {
     id: 'donos-da-bola',
     name: 'Os Donos da Bola',
-    subtitle: 'Interior e Litoral',
+    displayName: 'Os Donos da Bola — Interior e Litoral',
     network: 'Band',
     networkColor: '#FFB400',
     schedule: 'De segunda a sexta • Tarde',
@@ -107,10 +107,7 @@ const programs = [
 
           <!-- Content -->
           <div class="program-content">
-            <h3 class="program-name">{prog.name}</h3>
-            {'subtitle' in prog && prog.subtitle && (
-              <p class="program-subtitle">{prog.name} - {prog.subtitle}</p>
-            )}
+            <h3 class="program-name">{'displayName' in prog ? prog.displayName : prog.name}</h3>
             <div class="program-schedule">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               {prog.schedule}

@@ -17,6 +17,7 @@ const programs = [
   {
     id: 'donos-da-bola',
     name: 'Os Donos da Bola',
+    subtitle: 'Interior e Litoral',
     network: 'Band',
     networkColor: '#FFB400',
     schedule: 'De segunda a sexta • Tarde',
@@ -107,6 +108,9 @@ const programs = [
           <!-- Content -->
           <div class="program-content">
             <h3 class="program-name">{prog.name}</h3>
+            {'subtitle' in prog && prog.subtitle && (
+              <p class="program-subtitle">{prog.name} - {prog.subtitle}</p>
+            )}
             <div class="program-schedule">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               {prog.schedule}
@@ -242,6 +246,15 @@ const programs = [
     color: white;
     margin: 0 0 6px 0;
     line-height: 1.1;
+  }
+
+  .program-subtitle {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 8px 0;
   }
 
   .program-schedule {

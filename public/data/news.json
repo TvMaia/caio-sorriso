@@ -1,6 +1,11 @@
 {
-  "updated": "2026-08-23T15:21:58.197Z",
+  "updated": "2026-08-24T15:38:38.812Z",
   "headlines": [
+    {
+      "emoji": "🏆",
+      "text": "São Paulo é a cidade que mais receberá jogos da Copa do Mundo de Futebol Feminino - Prefeitura de São Paulo",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNRGg5REtSR3c1UkVYU05oT0xRbkZFc1cwXzhhYTV5bmdEdUdTbXpHN0VQSzlUdWNuWVRqMkNranUyWmgzRWtMZTdwSU5PRTIyMFhaVTZncGV4dWRtRDFIdHhQTmNEUzBOQzRtRU9XTDlkcDRiaFNmRWtxZDVadDZKd3B5LWZoeFhveWRnNW9RLTRhQVd3TDZIS054UE9oUkNXa2loQjdnRXVUNUx5STZxTzV1dnBQb0ZSX0tYM1VScG5sSkxsOFRmWUNfRkxTaU5uZXYyZ253?oc=5"
+    },
     {
       "emoji": "⚽",
       "text": "Mesmo com um a menos, Seleção Sub-17 domina Venezuela e vence por 3 a 0 na Granja Comary - CBF",
@@ -8,28 +13,58 @@
     },
     {
       "emoji": "⚽",
-      "text": "Brasil encara o México neste sábado por vaga na final do Qualificatório Pré-Olímpico - Confederação Brasileira de Basketball | CBB",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNVDFBNzZ4bEtmZG1kN1UwZjluNDZJclVmSmdYMzM1MVFhQ1BLWURkT2VkRUJwX21TaGI0YkVBeE1Wb3doTFpnbHJ2R2xiWlF3RXJnOUx5QS1OSDAtU2lVbHowa3l5d2t0WHJHU1U5ZmpoYldFV0hJRV9Cd1dhRGJ0NGZFZEVoYWxBSktWcUdaVDFCZC1VUHlzVlpROEdrakNZYlNkdkhxVHNQck9xM3MyUnpvWlNCY1k?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Ex-jogador da seleção exalta base, mas alerta sobre torneios: “Não vejo o Brasil no mesmo nível” - ge",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNX25IZG0tOXU0LVFzdXJCUWdLREVRM0MtWFVXMmZlRkF4bjZsb3RSVnh5aWJCdGRqSTI2NTUwT2J0NXBUSi1rbkVrN2F6VDhFSjFWWFNmNmVUMmVUdXdkQkoxMmdFUDFiQktQbnIyMFo2SkUtRE9WS0NMNkxQUE90bUxLUWpJWUVta0lCV3BJZFpxX3lLVGo1eHpnVzBEc0N6M0p5anQwT2xjdHMwTTRGTVg2WUlEQWNyWXA3UWpWRDRrX29ackFwbGhkbmNxclFaMFFVY29KVHQ2R2ctUjdFQk5nRGZ5Z9IB9AFBVV95cUxNUE5hZkUzX3ByTjZIRU5PV2NEUnZYQ05kdUJyT3J5a2d0Q1FrNGdrVUN2dkRJUjdDRVZkc1hxcnRCaERiZElXNFBQaWFXa183UTVISWNJQm9oSDNBbEVOMkNzSmtZQldPUzNLY3hhdWxnNXhNajY5T2MwbkJ0eW02TlFMSFR0SS1hdzgxd29VTkVhYURNZHlPWG81RHAwcUl3aWoyY3lUMUJmc2x4YllEN1hjdjFDRE5mWWN2cHZxT0ZEdjFkczllSzJ0eGcySjg5S1BZTVVwVEJ3bGlaQVlpUWhKSmJRMmRtQ09tLVZUallVLXFv?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Amistoso milionário da seleção vira alvo de pedido de boicote na Índia - UOL",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVzRnaExocEpqazlnMGs5VVNoNXI2Qk1nLVVqeGJtNVpVTU5fT1NiZkhhcTQ4TGFHaEZ2RVB6RDN6TVRLeUdXSHRuUjdveWFiV0E2SGhHVEx2bUE0cV9CWVUwYU9vanYwZ1dTcWZRbjI0d0tXbW1GTTlrU2x3Q3hjaDczenYzdVkxem5XQW9jUzhGVVQ0WUxDeS1pWGUwQzNsbkUxdFBjOFlkRXpUNFluVEo1NjQ2MGRMWl81NTdVQ3M1ZGRwSHBscWhpNUlMLXVsbHloNA?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Vila Olímpica Parahyba disputa Copa Brasil Sub-14 de polo aquático no Rio de Janeiro - Jornal da Paraíba",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSkhTbHRpSTJlMUY5eEpGVnZ3Mk9JNUtXclFoTjZvTVZmbmpwOVVqa2NYd08wVjRUMjh4ekJsYXl0a2NqNlkzTkViYm9Tel90dl9QZUgxSWhLX01lRHRuQ2RjS19CeTFEOTVFUXYweDZoWjZJQjRPTW51N2w5VmZ5ekd0dzEwYzJjajEtVHdlMDhHZTVHQTdQUklQR1RGQl9pZVZ5WjBOTDBCcGtrelI1Rjh3WXZmd9IBvgFBVV95cUxPbW53U0txby1wNTdfWGoxVU9PMWlJbU5yMGxaSEdyNjNDUk1yQnNfcHpTcU5ETjhvMXlrYXVRWkt4SVNvT0pDM0hsd3NKdDVNQkRYc3FsWFQwcnNzMDlsMlJscHpXWVlJRVNmUnIzbzlwVV9Ha2ZJUS1mNzlJeS1yUVZldWlDS3FmRHExa0RvTjlaQjYyX3hHVU1CdzhhbXJERU5YX1RzUlctQzRpTF9xbWQ0XzFJcHJFdnJOSmp3?oc=5"
+      "text": "Palmeiras anuncia renovação de Gustavo Gómez até 2030 - ESPN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOdGZITmV1T2RrZkJPNkNraWZlQTYySnNVMzV1ZC04ZTREeTNNU21QTXZoNTd5Vm10c3JhbjZHMDdiOUtxbzNUamJLWVE1MURuSE12VklsM2U1R1FWS3FPZ05SVklsRVl6SElsSWN6Z1Q5QTBkUFp3Y2NLRms1cFFXT2pmQjRocWl4VGJTcDVlenlZcnItWEd5bGpCSVFsNDdZR3M0Q3J2eVlHcER4R1ppMUVVSG5VSkUzX01RTmk2MHhIa25OOHJrTG90YzB5cVptU2tYM2pQN2Rndm9KbXc?oc=5"
     },
     {
       "emoji": "🏆",
-      "text": "‘Vamos patrocinar a Copa do Mundo Feminina 2027’, diz presidente da Coca-Cola Brasil - Exame",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNHQzMHF4bE8zWGxVWmJsaUJlRzIzUHdBYjRTYVk0SW1wVzlleDBBaUVtZUUzRll5djFXeEppaFItZ2RiX2ZXVFNyRWFISlJkaVBqT1QzTkp0MExvQXUyQ0JpQ2YyanhjMnhvS2pMUU5TVjQ4LWhIalZUOUkzUlF5ajJpeFZBSUVQMklSUW5XeU5haWF6Q3JFT3V4NGhBZ1RxSnU4bWxHX3hkN29GNWc?oc=5"
+      "text": "Onze Minutos: Brasil já conhece o caminho na Copa do Mundo Feminina de 2027 - Senado Federal",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNdEZMNVdfSHh0MGcyQkZJWVc1aDRpSVktR3R4ZTZzY25qUXZRZU5xaUF3cjV0Q1RsY1o4UUJoem40YkZMX0JzZi1KeFFvdmtIMXhPWTVFTDE2RlIwZzR0X1I1eDhqakNYTmttOEdwcmVKWVJjTHMwNEI2bHFyQWF5aEVETk9RWGJYcFd6QVhzMGVLWWF2aW1IUEZEU05lNUx2SzRyMkpNeVJLNFNvMjlOa2hORjMyRTllTmlETnE1eWdYRy1EMk50TGtGRXBUd0ZpOWc?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Fabinho frustra clubes brasileiros e reeditará parceria vencedora com Salah no Trabzonspor - Estadão",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQcjRjcGxUZW0yWnRhOHphdE9EVWU2S3JHSFFZWURSRFJuckh2SUFJMFpzUHFZdXBDbjNhVG41ODNxTVM4RWg1Sy15VjZSLWlmRXJzYktIbzF5ZUZ3emVNa2RtV25KQWZLR0VGeFM3bDJfbU1yRVZNSkZ6blFNclZ0NWNWa2NQUmZPeHlNZlE2ZWNyaXhYd1hrSHNoNk5nUHptN3BGXzFNWHlRWUZjZXZYb181M19KZnkxT0o2dkVZdWotV2JMS0lFcEZONW4xSVY50gHWAUFVX3lxTE5SYTVlZDNVRFI0bWpYUGNoVEFzUjBBWVVfTVJHclowYkl1V21VaGxPYjNPUWRKWGw1Wm9sMG54WFExcFVja1N6M1BZbV9pOFpxaTFMaExrQnJKZGVFQkRLZnlXNjN4Z0xPM0dENjNIWmV3WEltenZCZVdxd1BOR0M2bEFYM1RNUGJDN3hXV0E0by1qODY2NXhVTXBCZ3JGNDJpei1fQlkyRFRTY1pFc1drdDZNeDVPWUEzbWhOZS1mbFRWN1pqT1hXMDRQbkRqbm9ubU51U2c?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Cuca coloca em dúvida presença de Neymar em jogo do Santos com o Palmeiras na grama sintética - ge",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxObUF5TWRoNDAySWhvTHdtSjI3akNBU0RHaEszQkRKME5JLVctZWsxUXZGRWMxZjNWMURzTXNlZXZWMXBmLUgtd0hUWXRzTVB1ZTJjQ3JvVzd6WnI1dlB3UHVnTS1Ja2U1eG1BLUVkU21WUU5kSVlkUXVza3JNdzBiNFhmQ0hRT1FDZWpVb2RQRExDLTRCb0dNVUVBMjJ1UlV5Z3ZhWms4YW1xR1ZkWUNiWHh3TWNkTjktMVVqa3hUeXlzeWdPRWZNYTV0ZUZhZldEb090ajY1MUJ2aVR4dEVoSk9DN1diTHp6cGNaM3lPNy02dC1Ra20xVHVHb3d4N0VaRnkxSWlQVkg3dXfSAZoCQVVfeXFMUGFMbU9tSXRkYk80dTc0Z1FFOXpUam92M24wV3gwc0ZscGs5aEVwQS1QQmxDWTVhZll5Z2NRNmZWbURhdnI0ZjlMVDhyWElGdTNfRmVuWVNySWxuUU9MVHdPcC1kSHNxbS1sbFlWcXlfbjRVTXRtdGxpbXNpT1djWWRrVURGeC1MOUl4aWR1dVQwUHNucnZHVjd1NUxOSi1xODdCdjJheHZtOUdrdFBPY29PT3ROZUt2Vlg2emZRRTdIdjVmeXNLMll2dlZ2N05vbGNQaVE2RUxFNUN4Sms5WHZJTmVOZlRIMG1oRW93a3pfbUJSMHZrWWtVbmRSaEdVOGgxZTNVUW03MEZqNG80NWxOSmdhUnA5Y09B?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Meia da Seleção Brasileira é anunciado por clube de Salah - LANCE!",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdEVZLVJiOEROZmJBSUt1Rnh4dkk4ejJrX2doblU0QUZLSUZVbkwwWkx3UmVLelF0MFpTT3lrdzN2XzF2RzZPdjJOTWZQVlphQlBrVzFTc01UN0tzU2pxc3JsbU5MNzBKbzlzOTVDREZvWDFBa1JuMi1fSlFnRU9vaE9LeWsyUm5OLTdlSlNaTFBoclRydVZ6R19qdnZNLTZ4bV9tZzY5dTFtLVFXU2c?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Da gastronomia ao tackle: Luiza Campos e a longevidade na seleção de rúgbi - UOL",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeFVVMGFfdUhPbnJTeUFHU0pORlNJYzU4bmN3c0k0Ykh2REJMZ1VqbDRJMWxtOTBtS05fQ09PSmxHZ25ZNUJuQ2hRcDQ3ZGhMYWtVYkx3NkI3QmJoaVZUZjFWMlk4NnU1eHE1TnFLVDM2YVRQbGV6YkVJUXJDNTlyN2N5ZzRFajFWVk1CXzdvZmYzV0M2NDdoMVdzQVpVSTkwRURteXYxS1cwZkxFai1hTVpn?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Quartas da Copa do Brasil: veja datas e horários dos jogos - VEJA",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQzk3NExNLVBCdVhHaWNvbWE4TXFiOV9DMFRjWVRnNnJsUHVWeGtQdHhyZGZnN1RzSFVyQ1hJVTZTaWRZU29FamVIbFBMNWRQQXpISUJyVkRfcmZfWG90cGZ3LW5xVHFfN19sbXk0cW83ZEJfa1VEOEM4VzZUbDdVTHVMZ1E1VThnUy11bEdsWGk2VmNvRDQ4?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Copa do Brasil: Vasco define São Januário como palco do duelo com o Vitória - CNN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOZnlOdFlpbXBwT19DdWJlUUttbU01NjEwREJDYVEyQVFSMTEydHVpdzQ4TFVJRFFDLWRPUTlrZ0xSeDhXaVVJM1RnWG1sUHlSRUlNSGVPY2tReUhJTnVzclI1ZlB2QWh0MHVXWmIydGY1QjNRMDI4QkdrU0JkMGRlaFJXWm80NloyUnJOUWFVWXptbkRKME00b1pDUGR1eXg0S3E1bEIxNGs3NDBhbE1hZWM0RFMxNFFwSk52NDB0bTc0VTRiaTNzMUVJdjF4dll6eUE?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Atleta da Seleção Brasileira estará no Torneio Regional de Ginástica Rítmica em São Luís. - O Imparcial",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQSXlXTFZFeERhY1QxSXM3YUNUcUFVTWlETUI5Tl9Cdy02cWFra0RRemFyYkJMTDVQaVFqRXVidDl4M2tUOHNDRzQ1b0lCVUN4VU1tNnItZVR3aUc5UV9xQkdBRUdjVWRHR05SZmhfaWJ4cEExMWQ4NEI4ZGN4TDhkQVRWclJFNTQ2OGpwZmN6QWZIYVNJeUhVamlIRjg0a1pRXzZWTkdZWFRyZ3FJeHFCY2I1VEU1WkpTcV9PUHhyWDkzcHdDUEllc1BuRlNreXFuRkVrRmIzM0o?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Aos 54 anos, ex-Seleção Brasileira que brilhou no Bayern trocou os gramados por vida no campo e hoje cuida de 4 mil cabeças de gado - abcmais.com",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPWjRJS1dJSnVWWlBJVzc0UmFZM3ZaajV4VG8zWktSQ2dCRTlGekhoNU56U2lnLWU1Z0daZFBlRDFHN3FTZWZ4X09LM1hfbzBCb3NWXy1KMHZHMWtZaDlad2dDUEFFRlM0ZDloRHlaYThoQ3dnaWVYZVRQZ3AwcUdMU0JzcmtfZ1pJczRmV0JLVWZPVlhjdE5SeUM1UHVGR2Zrb3hJMUJ5YmRUYkNYZnc1bTJaY0V6RTRzZjd1dDdmeG9vNlM3UDRkLURsdHFSck5EVE1OVHJaSlF6TTV5YTVzdm5FOXFibFNLcDlFbVZfYkd3WnRF?oc=5"
+    },
+    {
+      "emoji": "⚽",
+      "text": "Equipe Mista é prata e Brasil fecha Mundial de Judô Cadete com terceira medalha - CBJ | Confederação Brasileira de Judô",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNeVBjMjFFVHZSMUl4bEtJY1haNVZHZVdZbVdjNURqMzlFN2tLVnZqMG42N0J2cDJRUWZSUDJVbDBaMEczOUk5N05SSXFMcTJVZnpyU0JZbEJfMGJnNGNQSUNEQ2tKQVhlUnlaSnBOZ3F6WF85ai1SYVhoNUo2bGNsclZHUUczdlhlZmpUM1BCc0hHcGZGc0NXRDFuZ21nRnRQV1hRZ0pDeTFnOFhxNjdsVg?oc=5"
     },
     {
       "emoji": "⚽",
@@ -38,43 +73,8 @@
     },
     {
       "emoji": "🏆",
-      "text": "Veja a programação do Brasil até a Copa do Mundo e como foi o ciclo - ge",
-      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOVkZYWE9JZWdqemwzWjZmb2dSUEpXVWs0Um1rZUNMWEpRbkNtY0liUGtidVduY2J0Yms0NUU3S2p1MmlLT3h1SFFvU0hQWlVwUGFmNFNmUG5sU3A1eG5kanFxZ0RWekhXUDV4QnR0MW95NGRGTTc3Z1o3SWhhbTF6UG8wSU9kNnZxUFlMZ0pkVUt6VUs5QnBfcTdiYlBXWXRzYTF2SkhHZm1ZX2lWZUlKOE5KZWdicjN6M0lTREZoMkduTXNvNWJNYjVQaXM1UEFGalRROXpyVdIB5gFBVV95cUxNZ3dEWVEwendLdmVvU1JGSEhVUWlqTFhkTVJ4OWRqdnZ4YndHU1FmY3BMZnIyTW95ZkRuMkhEWUVUbGtUNndhdG4zRXY0XzhlWUtaRjZMa0NFMkJZRWUzUWRpcDdDdVJTY3dCR0NaSnpLazJUbkRyV3NJNmRyc29fbzRha2dXRHREVEs1N1gzclZLUjRRM3RjWVRRRUMyWTNZR2VVTnNVMzRrcl8ySjVING45TDdydkxfbGQ0M2RneGFQWkFBQmNwcVpEWWIwcWtiUExQS0FEbTJfTm4tT3l6LWFad1NIZw?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Brasil perde do México e vai buscar vaga no Pré-Olímpico via Americup em 2027 - Confederação Brasileira de Basketball | CBB",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcXF1SWxnZEFhRWpiZUwyR0IxbllmOHpVT1BEVVI5c2JLcDdyMkxIRU5EVFFDVmlnZmxtenQ4QnRjUldxZzRUOC1KekYydndpR2Y4TmkzSWpaSm5qeEFIVFNSNGNNdkJqc240NG1MNXFPbVdhZkd4c1g0TzR2bjViTWsyUkJ0bVdVN3ZvMFBJcWJ0b1JpRkFBRnhqQ3pwRmY3cmc0T0dGV1BLM21MTlE?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Gramado de jogo da seleção na Índia preocupa, e CBF enviará especialista - UOL",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNNV9oMWZ0LWlYNjJjS1l4MVdwLWhLY2Z4ckVzLWFlOWpoLUVpLW4yVXpNTVZ1Y0pYR0EzdV9ZZUFfaGFKMU41TjhST3BWR2c0cG9lQ25BUEp2SEg1bUhpSVhjcktvUHlUTzd1dk5tblQyWWs4SUxKelJheU5aVmpPVUNsdEgyUVU1dUlIN0FsbmpBaWlobmxMZjFRVVRLalBHYnJRd1VzX09EOTllNlZoNVk4R1NUeWsyNDh1LTZaNG41bnd1bTFpS3VEQnF3NDBRN3p6UTdnWHYxbmc?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Copa Feminina 2027: Brasil joga no Rio de Janeiro, em São Paulo e Brasília - CBF",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxONEY5cmowMGxscVhXWTBXVFdlbTh4dDViNGFZOEZxODJ2UG9meExuNnIxTzBreXRhVnJORDJrdGZnbUM2UC1FMWxMS2xMLVdYWjJCdjliZllKdGFHV2ZLM0llQ2s4WW56RnlISHdhdFIzN1g1N3JrSzJyUS1pQ2NzeGVfZGdOVXZSUDNyZ2R3MkVBNzIyQWViWFpDemZDWlpkTGM2eURJcmFZclNmNEdZckF3UDIyTTY5UEkybnpLM25zdnVBcmsxQjR1YzFwTUFWbmNQUmRFTzlJNGJneXNwc21MVQ?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Brasil encerra participação no Women’s Series de Bangkok - Confederação Brasileira de Basketball | CBB",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRFc0eDBSMWt1QWdaUnMwdlZ5YlZzTTBkbmJHNG9SWVVNNzhaM1FFZ2ZVQmdoQUg5ZDl3bDAtNy1UYUhDOGtMWVdmNXpsbDktM05PZ2F4U2EwLUFTc29MMlF0MFpmbzFMTk1zSUdLUDR3RUdSRGhnNnc1OFZGOWZ3SFUycExBNXVvMG1TTENMaGc?oc=5"
-    },
-    {
-      "emoji": "🏐",
-      "text": "Bruninho relembra ouro na Rio-2016 e comenta sobre momento atual do vôlei: ‘A seleção não pode tirar a faca dos dentes’ - O GLOBO",
-      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPQ1c2UTI5dXFMcXBMRUZzM0JFSTkzek1Xc01IdElTSWI2UjI4Ukt6d2hoRkJYbnJwZGVZZTN1UWpzUDItakttU1RIQlo2VzEwV1gzRVZIcnJpWXZZb1BZWmhWZlJEN0J1Qjd2MGMxdFB0R1AtZnFUR3V5X1FGenJ0d3NmYzRaTllKc1hyc0hRcVE0M1MxSUhJSzhlWkExV0lLNm4yWWFQRmhEaFNlSGZFeDJ3d1kzVXREd21LV2hMQkZLbjRhcmhJTjBFdVZPRXJRaks0cVNJUWludU9zUzd0MkdNZEQyMk9LWUh3alhIX3RGdklPVlIwVlRPRmN2VFpWSkxWZzln0gGUAkFVX3lxTE56RUdjZTQ0cWtHRHdZd21qc0ZDOGp6OTI4bkhLZHZfbnZFVWx0S0ZWaXg5eWVRbm5kdEJ4N3VqV003SDJrcF9ndGVORkkzazl0OWpsc1NaLTYtWmFaZnRWNnhmaDl2Y2JreE1mdFRQbjQ1ZklEYnVjMmc0WXI0UHJlbmpCVUt6aVF5UjZLSlA5MGV1NXdYUGZCakllMDRyWmtDb0RxeDhSTVJlQWdaSFh0UXJ2bVBtM1pKeFpsdFdhT09Td2NfM3lWSERPTG5OUS1qWmZXcmdRbUNqZTV0el9DNGU4Vm9WSVNSYTVPeTNvcXM3NlBrMmEyTjZ3b3gyQTJXTXlJRkx1RFdadzA5N0p3NmR4Qg?oc=5"
-    },
-    {
-      "emoji": "⚽",
-      "text": "Seleção Brasileira Sub-17 vence a Venezuela em amistoso na Granja Comary - CBF",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQcU9zcUNfVHhrS09wblVGRlA0UUszbFV6SHhPMUNZeGZRanVyYWlxWG9QNW1VUDl4LXkyMl9tcExFQlFEOUpwaDNDanFiLW5OZC1sYUcxeEY4SFA0a1pFM0hRVXNrV25RUDBZVXJBR01CZ01kX3NpYXVMUTF4aWEzTVFzY2xWUlhLTkFQeDRTLUswV0NHRE9OVFpPTQ?oc=5"
-    },
-    {
-      "emoji": "🏀",
-      "text": "Brasil vence a Argentina e vai à semifinal do Qualificatório ao Pré-Olimpico de basquete feminino - Confederação Brasileira de Basketball | CBB",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNcWRyM203bjlIQWdFUzRsWUVwT2hjdFdaQnAtNkZsSldtRlRVUjZZdi1oNzQ3WWxpQXc2elFlZXd4US1MTDhEcW5HN044WjkwMlpWcW9pc19ONjBHeFZrV0RPMmdNMlFZbTQ4RERuSzdwODUyN2hRWnlmQXVQMVlYbE0wMXpZcVN6eVlkWVg5VkF1R2lUMlhlejFPeDV3NmpmQUVtOTJDT21ieEItVTY3ZGE2ckFiemFGdjhKVTlaVGh4ck1xcDJ4Ng?oc=5"
+      "text": "Time de Salah na Turquia anuncia Fabinho, que defendeu Seleção Brasileira na Copa do Mundo - ESPN Brasil",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPYlFWMlE2NVRlZDE3d0Y4X2kwd3FXdkVpT0duX0N4MnRyZG9VdHUwVGEzNzJTRC10bHVlYmxsRERtMHNfRjdCYXRkRFdBZUVSbDVDNG9kMVpYVng1MV9xYUpGZTg5SlJpTUhyMVlpZjFZLURoRU1TUEpGUTNDZ3BlQV9GWjBNeVNGSFJvLWEzMWlnNW5MdVc3SXdPdTNGbjluWGc4UUM0SHpZeE1oZWhfZXNIckktMDFp?oc=5"
     }
   ]
 }

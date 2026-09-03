@@ -8,6 +8,8 @@ on:
 
 permissions:
   contents: write
+  # necessario para disparar o workflow de deploy ao final
+  actions: write
 
 jobs:
   update:
@@ -26,6 +28,7 @@ jobs:
         run: node scripts/update-content.mjs
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -33,7 +36,18 @@ jobs:
           git add public/images/instagram-*.jpg 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No content changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: update daily content (news + youtube + instagram)"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Push feito com o GITHUB_TOKEN nao dispara outros workflows (regra anti-recursao
+      # do GitHub Actions). Sem esta chamada o conteudo entra no repositorio mas nunca
+      # chega ao site publicado.
+      - name: Trigger deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main

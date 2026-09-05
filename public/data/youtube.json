@@ -1,6 +1,13 @@
 {
-  "updated": "2026-09-04T18:08:33.462Z",
+  "updated": "2026-09-05T17:10:37.530Z",
   "videos": [
+    {
+      "id": "L9gQrbKsjOE",
+      "title": "🚨 VOU FALAR O QUE MUITA GENTE NÃO QUER OUVIR SIBRE FUTEBOL! #futebol #palmeiras #vascodagama",
+      "thumbnail": "https://i.ytimg.com/vi/L9gQrbKsjOE/mqdefault.jpg",
+      "publishedAt": "2026-09-05T15:37:43Z",
+      "url": "https://www.youtube.com/watch?v=L9gQrbKsjOE"
+    },
     {
       "id": "cxlFHBGT-gg",
       "title": "Fluminense vs Santos: O Começo Épico do Santos contra o Placar! #shorts",
@@ -35,13 +42,6 @@
       "thumbnail": "https://i.ytimg.com/vi/dEhrW_3wVRE/mqdefault.jpg",
       "publishedAt": "2026-09-03T23:58:27Z",
       "url": "https://www.youtube.com/watch?v=dEhrW_3wVRE"
-    },
-    {
-      "id": "ymQ_eGvFZGo",
-      "title": "Palmeiras: Abel Ferreira e o mistério do microfone no clássico! #shorts",
-      "thumbnail": "https://i.ytimg.com/vi/ymQ_eGvFZGo/mqdefault.jpg",
-      "publishedAt": "2026-09-03T14:58:37Z",
-      "url": "https://www.youtube.com/watch?v=ymQ_eGvFZGo"
     }
   ]
 }

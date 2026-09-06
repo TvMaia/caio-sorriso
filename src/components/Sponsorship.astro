@@ -6,18 +6,21 @@ const sponsors = [
     category: 'Patrocinadora Oficial',
     url: 'https://betesporte.bet.br',
     logo: asset('images/sponsor-bete.png'),
+    ar: 5.541,
   },
   {
     name: 'Vero Internet',
     category: 'Patrocinador Oficial',
     url: '#',
     logo: asset('images/sponsor-vero.png'),
+    ar: 2.284,
   },
   {
     name: 'Zurich Seguros',
     category: 'Patrocinador Oficial',
     url: '#',
     logo: asset('images/sponsor-zurique.png'),
+    ar: 2.253,
     // logo azul-escuro sobre transparencia: some no fundo, precisa virar clara
     lighten: true,
   },
@@ -26,20 +29,37 @@ const sponsors = [
     category: 'Patrocinador Oficial',
     url: '#',
     logo: asset('images/sponsor-obramax.png'),
+    ar: 3.971,
   },
   {
     name: 'Paraflu',
     category: 'Patrocinador Oficial',
     url: '#',
     logo: asset('images/sponsor-paraflu.png'),
+    ar: 4.385,
   },
   {
     name: 'CasaNova Grill',
     category: 'Patrocinador Oficial',
     url: '#',
     logo: asset('images/sponsor-casanova.png'),
+    ar: 0.954,
   },
 ];
+
+// Area optica constante: cada logo ocupa a mesma "mancha" na faixa, seja ela
+// quadrada ou comprida. Sem isso a logo horizontal estica ate o limite de
+// largura e a quadrada fica minuscula ao lado dela.
+const AREA = 3600;
+const MAX_H = 64;
+const MAX_W = 150;
+function box(ar) {
+  let h = Math.sqrt(AREA / ar);
+  let w = ar * h;
+  if (h > MAX_H) { h = MAX_H; w = ar * h; }
+  if (w > MAX_W) { w = MAX_W; h = w / ar; }
+  return `width:${Math.round(w)}px;height:${Math.round(h)}px`;
+}
 
 const opportunities = [
   {
@@ -116,6 +136,7 @@ const opportunities = [
                 <div class="sponsor-logo-wrap">
                   <img
                     class={s.lighten ? 'lighten' : undefined}
+                    style={box(s.ar)}
                     src={s.logo}
                     alt={s.name}
                     onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block'"
@@ -247,10 +268,10 @@ const opportunities = [
     background: #0F1E35;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
-    padding: 20px 32px;
+    padding: 20px 24px;
     text-decoration: none;
     transition: all 0.3s;
-    min-width: 160px;
+    min-width: 198px;
   }
 
   .sponsor-card:hover {
@@ -259,15 +280,13 @@ const opportunities = [
   }
 
   .sponsor-logo-wrap {
-    height: 46px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .sponsor-card img {
-    max-height: 46px;
-    max-width: 140px;
     object-fit: contain;
     opacity: 0.88;
     transition: opacity 0.3s;

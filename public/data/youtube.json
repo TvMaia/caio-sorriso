@@ -1,6 +1,13 @@
 {
-  "updated": "2026-10-16T18:38:24.803Z",
+  "updated": "2026-10-17T17:46:17.387Z",
   "videos": [
+    {
+      "id": "DjtWf5x71yY",
+      "title": "Judárias: O Termo Que Nasceu da Dor de Um Torcedor Carioca #shorts",
+      "thumbnail": "https://i.ytimg.com/vi/DjtWf5x71yY/mqdefault.jpg",
+      "publishedAt": "2026-10-16T21:04:33Z",
+      "url": "https://www.youtube.com/watch?v=DjtWf5x71yY"
+    },
     {
       "id": "CWAjbPcbIoM",
       "title": "Palmeiras na Final? Análise do Jogo e Previsão #shorts",
@@ -35,13 +42,6 @@
       "thumbnail": "https://i.ytimg.com/vi/8cBnzC6MvoA/mqdefault.jpg",
       "publishedAt": "2026-10-16T15:02:38Z",
       "url": "https://www.youtube.com/watch?v=8cBnzC6MvoA"
-    },
-    {
-      "id": "et5aIkC_Z24",
-      "title": "Seedorf no Corinthians: Estreia Difícil Contra o Vitória? #shorts",
-      "thumbnail": "https://i.ytimg.com/vi/et5aIkC_Z24/mqdefault.jpg",
-      "publishedAt": "2026-10-16T13:43:00Z",
-      "url": "https://www.youtube.com/watch?v=et5aIkC_Z24"
     }
   ]
 }
